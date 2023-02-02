@@ -21,7 +21,7 @@ namespace FFStudio
 		[ SerializeField, ShowIf( "ShowOnEqualOrAboveEvent" ) ] UnityEvent< int > onEqualorAbove;
         [ SerializeField, ShowIf( "ShowOnAboveEvent" ) ] UnityEvent< int > onAbove;
         
-		protected override void OnSharedDataChange()
+		public override void OnSharedDataChange()
 		{
             if( sharedDataNotifier.sharedValue < threshold )
 			{

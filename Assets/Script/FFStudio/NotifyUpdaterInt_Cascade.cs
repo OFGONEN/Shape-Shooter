@@ -18,7 +18,7 @@ namespace FFStudio
         
         [ SerializeField ] Cascade[] cascades;
         
-		protected override void OnSharedDataChange()
+		public override void OnSharedDataChange()
 		{
             for( var i = 0; i < cascades.Length; i++ )
 			    if( sharedDataNotifier.sharedValue == cascades[ i ].threshold )

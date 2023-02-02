@@ -30,7 +30,7 @@ namespace FFStudio
 #endregion
 
 #region Base Class API
-		protected virtual void OnSharedDataChange()
+		public virtual void OnSharedDataChange()
 		{
 			notify_event.Invoke( sharedDataNotifier.SharedValue );
 		}
