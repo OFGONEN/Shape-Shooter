@@ -88,10 +88,6 @@ namespace FFStudio
 					// .Append( tween ) // TODO: UIElements tween.
 					.Append( level_information_text_Scale.DoScale_Start( GameSettings.Instance.ui_Entity_Scale_TweenDuration ) )
 					.AppendCallback( () => tapInputListener.response = StartLevel );
-
-            // elephantLevelEvent.level             = CurrentLevelData.Instance.currentLevel_Shown;
-            // elephantLevelEvent.elephantEventType = ElephantEvent.LevelStarted;
-            // elephantLevelEvent.Raise();
         }
 
         private void LevelCompleteResponse()
