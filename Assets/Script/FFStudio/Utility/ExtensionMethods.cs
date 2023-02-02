@@ -16,6 +16,43 @@ namespace FFStudio
 		static List< Transform > baseModelBones   = new List< Transform >( 96 );
 		static List< Transform > targetModelBones = new List< Transform >( 96 );
 
+		private static readonly int format_float_charA = System.Convert.ToInt32( 'a' );
+		private static readonly Dictionary< int, string > format_float_units = new Dictionary< int, string >
+		{
+			{ 0, ""  } ,
+			{ 1, "K" },
+			{ 2, "M" },
+			{ 3, "B" },
+			{ 4, "T" }
+		};
+
+		public static string FormatNumber( double value )
+		{
+			if( value < 1d )
+			{
+				return "0";
+			}
+
+			var n = ( int )System.Math.Log( value, 1000 );
+			var m = value / System.Math.Pow( 1000, n );
+			var unit = "";
+
+			if( n < format_float_units.Count )
+			{
+				unit = format_float_units[ n ];
+			}
+			else
+			{
+				var unitInt = n - format_float_units.Count;
+				var secondUnit = unitInt % 26;
+				var firstUnit = unitInt / 26;
+				unit = System.Convert.ToChar( firstUnit + format_float_charA ).ToString() + System.Convert.ToChar( secondUnit + format_float_charA ).ToString();
+			}
+
+			// Math.Floor(m * 100) / 100) fixes rounding errors
+			return ( System.Math.Floor( m * 100 ) / 100 ).ToString( "0.##" ) + unit;
+		}
+
 		public static Vector2 ReturnV2FromUnSignedAngle( this float angle )
 		{
 			switch( ( int )angle )
