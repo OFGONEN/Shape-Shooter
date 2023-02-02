@@ -119,6 +119,18 @@ namespace FFEditor
 			Selection.SetActiveObjectWithContext( appScene, appScene );
 		}
 
+		[ MenuItem( "FFShortcut/Open App Scene &#3" ) ]
+		static private void OpenAppScene()
+		{
+			EditorSceneManager.OpenScene( "Assets/Scenes/app.unity", OpenSceneMode.Single );
+		}
+
+		[ MenuItem( "FFShortcut/Open Game Template Scene &#4" ) ]
+		static private void OpenGameTemplateScene()
+		{
+			EditorSceneManager.OpenScene( "Assets/Scenes/game_template.unity", OpenSceneMode.Single );
+		}
+
 		[ MenuItem( "FFShortcut/Select Play Mode Settings &4" ) ]
 		static private void SelectPlayModeSettings()
 		{
