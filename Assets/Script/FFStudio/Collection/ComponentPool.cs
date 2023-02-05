@@ -50,7 +50,7 @@ namespace FFStudio
 			else
 			{
 				entity = InitEntity();
-				FFLogger.Log( "New Entity Created", this );
+				FFLogger.Log( "New Entity created.", this );
 			}
 
 			return entity;
