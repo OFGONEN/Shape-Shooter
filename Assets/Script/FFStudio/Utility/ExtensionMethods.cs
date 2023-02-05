@@ -26,7 +26,7 @@ namespace FFStudio
 			{ 4, "T" }
 		};
 
-		public static string FormatNumber( double value )
+		public static string FormatBigNumberAANotation( double value )
 		{
 			if( value < 1d )
 			{

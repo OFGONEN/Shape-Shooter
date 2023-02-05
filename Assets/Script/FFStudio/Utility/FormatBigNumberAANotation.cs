@@ -8,7 +8,7 @@ using UnityEngine.Events;
 
 namespace FFStudio
 {
-	public class FormatFloat : MonoBehaviour
+	public class FormatBigNumberAANotation : MonoBehaviour
 	{
 #region Fields
 		[ SerializeField ] UnityEvent< string > onFormatFloatEvent;
@@ -23,7 +23,7 @@ namespace FFStudio
 #region API
 		public void UpdateTextRenderer( float value )
 		{
-			onFormatFloatEvent.Invoke( suffix + ExtensionMethods.FormatNumber( value ) + prefix );
+			onFormatFloatEvent.Invoke( suffix + ExtensionMethods.FormatBigNumberAANotation( value ) + prefix );
 		}
 
 		public void UpdateTextRendererFormat( float value )
