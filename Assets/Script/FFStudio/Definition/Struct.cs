@@ -52,6 +52,7 @@ namespace FFStudio
 		public bool parent;
 		public Vector3 offset;
 		public float size;
+		public bool keepParentRotation;
 	}
 
 	[ Serializable ]
