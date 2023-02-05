@@ -7,11 +7,11 @@ using Sirenix.OdinInspector;
 
 namespace FFStudio
 {
-// [ CreateAssetMenu( fileName = "shared_", menuName = "FF/Data/Shared/Library/" ) ]
+	// [ CreateAssetMenu( fileName = "shared_", menuName = "FF/Data/Shared/Library/" ) ]
 	public class SharedDataLibrary< DataType > : ScriptableObject 
 	{
 #region Fields
-      [ Title( "Setup" ) ]
+	[ Title( "Setup" ) ]
         [ SerializeField ] DataType[] data_array;
 #endregion
 
