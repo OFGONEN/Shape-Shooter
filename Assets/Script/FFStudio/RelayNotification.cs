@@ -6,13 +6,13 @@ using Sirenix.OdinInspector;
 
 namespace FFStudio
 {
-	public class NotifyUpdater< SharedDataNotifierType, SharedDataType > : MonoBehaviour
+	public class RelayNotification< SharedDataNotifierType, SharedDataType > : MonoBehaviour
 		where SharedDataNotifierType : SharedDataNotifier< SharedDataType >
 	{
 #region Fields
 	[ Title( "Setup" ) ]
 		[ SerializeField ] protected SharedDataNotifierType sharedDataNotifier;
-		[ SerializeField, HideIf( "HideBaseClassOnNotifyEvent" ), LabelText( "") ] protected UnityEvent< SharedDataType > notify_event;
+		[ SerializeField, HideIf( "HideBaseClassOnNotifyEvent" ), LabelText( "" ) ] protected UnityEvent< SharedDataType > notify_event;
 
 		public virtual bool HideBaseClassOnNotifyEvent => false;
 #endregion

@@ -2,7 +2,7 @@
 
 namespace FFStudio
 {
-	public class NotifyUpdaterFloat : NotifyUpdater< SharedFloatNotifier, float >
+	public class RelayNotificationFloat : RelayNotification< SharedFloatNotifier, float >
     {
     }
 }

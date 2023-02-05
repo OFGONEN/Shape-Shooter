@@ -6,7 +6,7 @@ using Sirenix.OdinInspector;
 
 namespace FFStudio
 {
-	public class NotifyUpdaterInt_Threshold : NotifyUpdater< SharedIntNotifier, int >
+	public class RelayNotificationIntegerThreshold : RelayNotification< SharedIntNotifier, int >
     {
 		public override bool HideBaseClassOnNotifyEvent => true;
 

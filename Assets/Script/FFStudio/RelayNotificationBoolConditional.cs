@@ -5,7 +5,7 @@ using Sirenix.OdinInspector;
 
 namespace FFStudio
 {
-	public class NotifyUpdaterBool_Conditional : NotifyUpdater< SharedBoolNotifier, bool >
+	public class RelayNotificationBoolConditional : RelayNotification< SharedBoolNotifier, bool >
     {
 #if UNITY_EDITOR
 		[ InfoBox( "Unity Event will only be invoked if the shared data becomes TRUE", "value_target" ) ]

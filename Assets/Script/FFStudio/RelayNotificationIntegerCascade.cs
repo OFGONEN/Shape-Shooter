@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 namespace FFStudio
 {
-	public class NotifyUpdaterInt_Cascade : NotifyUpdater< SharedIntNotifier, int >
+	public class RelayNotificationIntegerCascade : RelayNotification< SharedIntNotifier, int >
     {
 		public override bool HideBaseClassOnNotifyEvent => true;
 
