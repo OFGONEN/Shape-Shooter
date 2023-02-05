@@ -119,9 +119,133 @@ namespace FFStudio
 			return new Vector3( v2.x, v2.y, 0 );
 		}
 
+		public static Vector3Int ConvertToVector3Int( this Vector3 v3 )
+		{
+			return new Vector3Int( Mathf.RoundToInt( v3.x ), Mathf.RoundToInt( v3.y ), Mathf.RoundToInt( v3.z ) );
+		}
+
+		public static int GetUniqeHashCode_PositiveIntegers( this Vector3Int v3 )
+		{
+			var max = Mathf.Max( v3.x, v3.y, v3.z );
+
+			var hash = max * max * max + ( 2 * max * v3.z ) + v3.z;
+			if( max == v3.z )
+			{
+				var xyMax = Mathf.Max( v3.x, v3.y );
+				hash += xyMax * xyMax;
+			}
+			if( v3.y >= v3.x )
+				hash += v3.x + v3.y;
+			else
+				hash += v3.y;
+
+			return hash;
+		}
+
+		public static int GetUniqeHashCode_AllIntegers( this Vector3Int v3 )
+		{
+			v3.x = v3.x >= 0 ? 2 * v3.x : -2 * v3.x - 1;
+			v3.y = v3.y >= 0 ? 2 * v3.y : -2 * v3.y - 1;
+			v3.z = v3.z >= 0 ? 2 * v3.z : -2 * v3.z - 1;
+
+			var max = Mathf.Max( v3.x, v3.y, v3.z );
+
+			var hash = max * max * max + ( 2 * max * v3.z ) + v3.z;
+			if( max == v3.z )
+			{
+				var xyMax = Mathf.Max( v3.x, v3.y );
+				hash += xyMax * xyMax;
+			}
+			if( v3.y >= v3.x )
+				hash += v3.x + v3.y;
+			else
+				hash += v3.y;
+
+			return hash;
+		}
+
 		public static Vector3 RandomPointBetween( this Vector3 first, Vector3 second )
 		{
 			return first + Random.Range( 0, 1f ) * ( second - first );
+		}
+
+		public static Vector3Int SetX( this Vector3Int theVector, int newX )
+		{
+			theVector.x = newX;
+			return theVector;
+		}
+
+		public static Vector3Int SetY( this Vector3Int theVector, int newY )
+		{
+			theVector.y = newY;
+			return theVector;
+		}
+
+		public static Vector3Int SetZ( this Vector3Int theVector, int newZ )
+		{
+			theVector.z = newZ;
+			return theVector;
+		}
+
+		public static Vector3Int OffsetX( this Vector3Int theVector, int deltaX )
+		{
+			theVector.x += deltaX;
+			return theVector;
+		}
+
+		public static Vector3Int OffsetY( this Vector3Int theVector, int deltaY )
+		{
+			theVector.y += deltaY;
+			return theVector;
+		}
+
+		public static Vector3Int OffsetZ( this Vector3Int theVector, int deltaZ )
+		{
+			theVector.z += deltaZ;
+			return theVector;
+		}
+
+		public static Vector3Int NegateX( this Vector3Int theVector )
+		{
+			theVector.x *= -1;
+			return theVector;
+		}
+
+		public static Vector3Int NegateY( this Vector3Int theVector )
+		{
+			theVector.y *= -1;
+			return theVector;
+		}
+
+		public static Vector3Int NegateZ( this Vector3Int theVector )
+		{
+			theVector.z *= -1;
+			return theVector;
+		}
+
+		public static Vector3Int MakeXAbsolute( this Vector3Int theVector )
+		{
+			theVector.x *= ( int )Mathf.Sign( theVector.x );
+			return theVector;
+		}
+
+		public static Vector3Int MakeYAbsolute( this Vector3Int theVector )
+		{
+			theVector.y *= ( int )Mathf.Sign( theVector.y );
+			return theVector;
+		}
+
+		public static Vector3Int MakeZAbsolute( this Vector3Int theVector )
+		{
+			theVector.z *= ( int )Mathf.Sign( theVector.z );
+			return theVector;
+		}
+
+		public static Hash128 GetQuantizedHash( this Vector3 v3 )
+		{
+			Hash128 hash128 = new Hash128();
+			HashUtilities.QuantisedVectorHash( ref v3, ref hash128 );
+			return hash128;
 		}
 
 		public static void LookAtOverTime( this Transform baseTransform, Vector3 targetPosition, float speed )
@@ -572,7 +696,7 @@ namespace FFStudio
 			return Mathf.Clamp( value, vector.x, vector.y );
 		}
 
-		public static int GetCustomHashCode( this Vector2Int v2 )
+		public static int GetUniqueHashCode_PositiveIntegers( this Vector2Int v2 )
 		{
 			if( Mathf.Max( v2.x, v2.y ) == v2.x )
 				return v2.x * v2.x + v2.x + v2.y;
