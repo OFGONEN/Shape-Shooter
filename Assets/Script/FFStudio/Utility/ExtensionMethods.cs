@@ -247,6 +247,18 @@ namespace FFStudio
 			return theVector;
 		}
 
+		public static Vector2 MultiplyX( this Vector2 theVector, float delta )
+		{
+			theVector.x *= delta;
+			return theVector;
+		}
+
+		public static Vector2 MultiplyY( this Vector2 theVector, float delta )
+		{
+			theVector.y *= delta;
+			return theVector;
+		}
+
 		public static Vector3 ClampXY( this Vector3 value, Vector2 min, Vector2 max )
 		{
 			value.x = Mathf.Clamp( value.x, min.x, max.x );
