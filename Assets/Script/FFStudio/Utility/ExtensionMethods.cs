@@ -352,6 +352,14 @@ namespace FFStudio
 			return theVector;
 		}
 
+		public static Vector3 Absolute( this Vector3 theVector )
+		{
+			theVector.x *= Mathf.Sign( theVector.x );
+			theVector.y *= Mathf.Sign( theVector.y );
+			theVector.z *= Mathf.Sign( theVector.z );
+			return theVector;
+		}
+
 		public static float ComponentSum( this Vector3 theVector )
 		{
 			return theVector.x + theVector.y + theVector.z;
