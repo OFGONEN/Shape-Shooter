@@ -44,13 +44,13 @@ namespace FFEditor
 		[MenuItem( "FFShortcut/Delete Save File _F8" )]
 		static void DeleteSaveFile()
 		{
-			if( File.Exists( ExtensionMethods.SAVE_PATH + "save.txt" ) )
+			if( File.Exists( Extensions.SAVE_PATH + "save.txt" ) )
 			{
 				FFStudio.FFLogger.Log( "SaveSystem: Found save file. Deleting it." );
-				File.Delete( ExtensionMethods.SAVE_PATH + "save.txt" );
+				File.Delete( Extensions.SAVE_PATH + "save.txt" );
 			}
 
-			if( File.Exists( ExtensionMethods.SAVE_PATH + "save.txt" ) )
+			if( File.Exists( Extensions.SAVE_PATH + "save.txt" ) )
 				FFStudio.FFLogger.LogError( "SaveSystem: Failed to delete save file." );
 			else
 				FFStudio.FFLogger.Log( "SaveSystem: Successfully deleted save file." );

@@ -1,8 +1,5 @@
 /* Created by and for usage of FF Studios (2023). */
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,7 +20,7 @@ namespace FFStudio
 #region API
 		public void UpdateTextRenderer( float value )
 		{
-			onFormatFloatEvent.Invoke( suffix + ExtensionMethods.FormatBigNumberAANotation( value ) + prefix );
+			onFormatFloatEvent.Invoke( suffix + MathExtensions.FormatBigNumberAANotation( value ) + prefix );
 		}
 
 		public void UpdateTextRendererFormat( float value )

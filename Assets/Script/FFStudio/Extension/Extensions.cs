@@ -9,64 +9,14 @@ using DG.Tweening;
 
 namespace FFStudio
 {
-	public static class ExtensionMethods
+	public static class Extensions
 	{
 		public static readonly string SAVE_PATH = Application.persistentDataPath + "/Saves/";
 
 		static List< Transform > baseModelBones   = new List< Transform >( 96 );
 		static List< Transform > targetModelBones = new List< Transform >( 96 );
 
-		private static readonly int format_float_charA = System.Convert.ToInt32( 'a' );
-		private static readonly Dictionary< int, string > format_float_units = new Dictionary< int, string >
-		{
-			{ 0, ""  } ,
-			{ 1, "K" },
-			{ 2, "M" },
-			{ 3, "B" },
-			{ 4, "T" }
-		};
-
-		public static string FormatBigNumberAANotation( double value )
-		{
-			if( value < 1d )
-			{
-				return "0";
-			}
-
-			var n = ( int )System.Math.Log( value, 1000 );
-			var m = value / System.Math.Pow( 1000, n );
-			var unit = "";
-
-			if( n < format_float_units.Count )
-			{
-				unit = format_float_units[ n ];
-			}
-			else
-			{
-				var unitInt = n - format_float_units.Count;
-				var secondUnit = unitInt % 26;
-				var firstUnit = unitInt / 26;
-				unit = System.Convert.ToChar( firstUnit + format_float_charA ).ToString() + System.Convert.ToChar( secondUnit + format_float_charA ).ToString();
-			}
-
-			// Math.Floor(m * 100) / 100) fixes rounding errors
-			return ( System.Math.Floor( m * 100 ) / 100 ).ToString( "0.##" ) + unit;
-		}
-
-		public static Vector2 ReturnV2FromUnSignedAngle( this float angle )
-		{
-			switch( ( int )angle )
-			{
-				case   0: return Vector2.up;
-				case  90: return Vector2.right;
-				case 180: return Vector2.down;
-				case 270: return Vector2.left;
-				
-				default: return Vector2.zero;
-			}
-		}
-
-		public static bool FindSameColor( this List<Color> colors, Color color )
+		public static bool FindSameColor( this List< Color > colors, Color color )
 		{
 			bool hasColor = false;
 
@@ -76,7 +26,7 @@ namespace FFStudio
 			return hasColor;
 		}
 
-		public static bool FindSameColor( this List<Color> colors, Color color, out int index )
+		public static bool FindSameColor( this List< Color > colors, Color color, out int index )
 		{
 			bool hasColor = false;
 			index = -1;
@@ -104,7 +54,7 @@ namespace FFStudio
 			return sameColor;
 		}
 
-		public static T ReturnLastItem<T>( this List<T> list )
+		public static T ReturnLastItem< T >( this List< T > list )
 		{
 			var lastIndex = list.Count - 1;
 
@@ -112,140 +62,6 @@ namespace FFStudio
 			list.RemoveAt( lastIndex );
 
 			return item;
-		}
-
-		public static Vector3 ConvertV3( this Vector2 v2 )
-		{
-			return new Vector3( v2.x, v2.y, 0 );
-		}
-
-		public static Vector3Int ConvertToVector3Int( this Vector3 v3 )
-		{
-			return new Vector3Int( Mathf.RoundToInt( v3.x ), Mathf.RoundToInt( v3.y ), Mathf.RoundToInt( v3.z ) );
-		}
-
-		public static int GetUniqeHashCode_PositiveIntegers( this Vector3Int v3 )
-		{
-			var max = Mathf.Max( v3.x, v3.y, v3.z );
-
-			var hash = max * max * max + ( 2 * max * v3.z ) + v3.z;
-			if( max == v3.z )
-			{
-				var xyMax = Mathf.Max( v3.x, v3.y );
-				hash += xyMax * xyMax;
-			}
-			if( v3.y >= v3.x )
-				hash += v3.x + v3.y;
-			else
-				hash += v3.y;
-
-			return hash;
-		}
-
-		public static int GetUniqeHashCode_AllIntegers( this Vector3Int v3 )
-		{
-			v3.x = v3.x >= 0 ? 2 * v3.x : -2 * v3.x - 1;
-			v3.y = v3.y >= 0 ? 2 * v3.y : -2 * v3.y - 1;
-			v3.z = v3.z >= 0 ? 2 * v3.z : -2 * v3.z - 1;
-
-			var max = Mathf.Max( v3.x, v3.y, v3.z );
-
-			var hash = max * max * max + ( 2 * max * v3.z ) + v3.z;
-			if( max == v3.z )
-			{
-				var xyMax = Mathf.Max( v3.x, v3.y );
-				hash += xyMax * xyMax;
-			}
-			if( v3.y >= v3.x )
-				hash += v3.x + v3.y;
-			else
-				hash += v3.y;
-
-			return hash;
-		}
-
-		public static Vector3 RandomPointBetween( this Vector3 first, Vector3 second )
-		{
-			return first + Random.Range( 0, 1f ) * ( second - first );
-		}
-
-		public static Vector3Int SetX( this Vector3Int theVector, int newX )
-		{
-			theVector.x = newX;
-			return theVector;
-		}
-
-		public static Vector3Int SetY( this Vector3Int theVector, int newY )
-		{
-			theVector.y = newY;
-			return theVector;
-		}
-
-		public static Vector3Int SetZ( this Vector3Int theVector, int newZ )
-		{
-			theVector.z = newZ;
-			return theVector;
-		}
-
-		public static Vector3Int OffsetX( this Vector3Int theVector, int deltaX )
-		{
-			theVector.x += deltaX;
-			return theVector;
-		}
-
-		public static Vector3Int OffsetY( this Vector3Int theVector, int deltaY )
-		{
-			theVector.y += deltaY;
-			return theVector;
-		}
-
-		public static Vector3Int OffsetZ( this Vector3Int theVector, int deltaZ )
-		{
-			theVector.z += deltaZ;
-			return theVector;
-		}
-
-		public static Vector3Int NegateX( this Vector3Int theVector )
-		{
-			theVector.x *= -1;
-			return theVector;
-		}
-
-		public static Vector3Int NegateY( this Vector3Int theVector )
-		{
-			theVector.y *= -1;
-			return theVector;
-		}
-
-		public static Vector3Int NegateZ( this Vector3Int theVector )
-		{
-			theVector.z *= -1;
-			return theVector;
-		}
-
-		public static Vector3Int MakeXAbsolute( this Vector3Int theVector )
-		{
-			theVector.x *= ( int )Mathf.Sign( theVector.x );
-			return theVector;
-		}
-
-		public static Vector3Int MakeYAbsolute( this Vector3Int theVector )
-		{
-			theVector.y *= ( int )Mathf.Sign( theVector.y );
-			return theVector;
-		}
-
-		public static Vector3Int MakeZAbsolute( this Vector3Int theVector )
-		{
-			theVector.z *= ( int )Mathf.Sign( theVector.z );
-			return theVector;
-		}
-
-		public static Hash128 GetQuantizedHash( this Vector3 v3 )
-		{
-			Hash128 hash128 = new Hash128();
-			HashUtilities.QuantisedVectorHash( ref v3, ref hash128 );
-			return hash128;
 		}
 
 		public static void LookAtOverTime( this Transform baseTransform, Vector3 targetPosition, float speed )
@@ -330,163 +146,6 @@ namespace FFStudio
 		public static void EmptyMethod( Camera camera )
 		{
 			/* Intentionally empty, by definition. */
-		}
-
-		public static Vector2 Clamp( this Vector2 value, Vector2 min, Vector2 max )
-		{
-			value.x = Mathf.Clamp( value.x, min.x, max.x );
-			value.y = Mathf.Clamp( value.y, min.y, max.y );
-			return value;
-		}
-
-		public static Vector3 Clamp( this Vector3 value, Vector3 min, Vector3 max )
-		{
-			value.x = Mathf.Clamp( value.x, min.x, max.x );
-			value.y = Mathf.Clamp( value.y, min.y, max.y );
-			value.z = Mathf.Clamp( value.z, min.z, max.z );
-			return value;
-		}
-
-		public static Vector2 SetX( this Vector2 theVector, float newX )
-		{
-			theVector.x = newX;
-			return theVector;
-		}
-
-		public static Vector2 SetY( this Vector2 theVector, float newY )
-		{
-			theVector.y = newY;
-			return theVector;
-		}
-
-		public static Vector2 OffsetX( this Vector2 theVector, float delta )
-		{
-			theVector.x = theVector.x + delta;
-			return theVector;
-		}
-
-		public static Vector2 OffsetY( this Vector2 theVector, float delta )
-		{
-			theVector.y = theVector.y + delta;
-			return theVector;
-		}
-
-		public static Vector2 MultiplyX( this Vector2 theVector, float delta )
-		{
-			theVector.x *= delta;
-			return theVector;
-		}
-
-		public static Vector2 MultiplyY( this Vector2 theVector, float delta )
-		{
-			theVector.y *= delta;
-			return theVector;
-		}
-
-		public static Vector3 ClampXY( this Vector3 value, Vector2 min, Vector2 max )
-		{
-			value.x = Mathf.Clamp( value.x, min.x, max.x );
-			value.y = Mathf.Clamp( value.y, min.y, max.y );
-			return value;
-		}
-
-		public static Vector3 ClampXZ( this Vector3 value, Vector2 min, Vector2 max )
-		{
-			value.x = Mathf.Clamp( value.x, min.x, max.x );
-			value.z = Mathf.Clamp( value.z, min.y, max.y );
-			return value;
-		}
-
-		public static Vector3 ClampYZ( this Vector3 value, Vector2 min, Vector2 max )
-		{
-			value.y = Mathf.Clamp( value.y, min.x, max.x );
-			value.z = Mathf.Clamp( value.z, min.y, max.y );
-			return value;
-		}
-
-		public static Vector3 SetX( this Vector3 theVector, float newX )
-		{
-			theVector.x = newX;
-			return theVector;
-		}
-
-		public static Vector3 SetY( this Vector3 theVector, float newY )
-		{
-			theVector.y = newY;
-			return theVector;
-		}
-
-		public static Vector3 SetZ( this Vector3 theVector, float newZ )
-		{
-			theVector.z = newZ;
-			return theVector;
-		}
-
-		public static Vector3 OffsetX( this Vector3 theVector, float deltaX )
-		{
-			theVector.x += deltaX;
-			return theVector;
-		}
-
-		public static Vector3 OffsetY( this Vector3 theVector, float deltaY )
-		{
-			theVector.y += deltaY;
-			return theVector;
-		}
-
-		public static Vector3 OffsetZ( this Vector3 theVector, float deltaZ )
-		{
-			theVector.z += deltaZ;
-			return theVector;
-		}
-
-		public static Vector3 NegateX( this Vector3 theVector )
-		{
-			theVector.x *= -1;
-			return theVector;
-		}
-
-		public static Vector3 NegateY( this Vector3 theVector )
-		{
-			theVector.y *= -1;
-			return theVector;
-		}
-
-		public static Vector3 NegateZ( this Vector3 theVector )
-		{
-			theVector.z *= -1;
-			return theVector;
-		}
-
-		public static Vector3 MakeXAbsolute( this Vector3 theVector )
-		{
-			theVector.x *= Mathf.Sign( theVector.x );
-			return theVector;
-		}
-
-		public static Vector3 MakeYAbsolute( this Vector3 theVector )
-		{
-			theVector.y *= Mathf.Sign( theVector.y );
-			return theVector;
-		}
-
-		public static Vector3 MakeZAbsolute( this Vector3 theVector )
-		{
-			theVector.z *= Mathf.Sign( theVector.z );
-			return theVector;
-		}
-
-		public static Vector3 Absolute( this Vector3 theVector )
-		{
-			theVector.x *= Mathf.Sign( theVector.x );
-			theVector.y *= Mathf.Sign( theVector.y );
-			theVector.z *= Mathf.Sign( theVector.z );
-			return theVector;
-		}
-
-		public static float ComponentSum( this Vector3 theVector )
-		{
-			return theVector.x + theVector.y + theVector.z;
 		}
 
 		public static TransformData GetTransformData( this Transform transform )
@@ -631,46 +290,9 @@ namespace FFStudio
 			textRenderer.color = newColor;
 		}
 
-		public static float RoundTo( this float number, float step )
-		{
-			int   quotient = Mathf.FloorToInt( number / step );
-			var   reminder = number % step;
-			float rounded  = quotient * step;
-
-			if( reminder >= step / 2f )
-				rounded += step;
-
-			return rounded;
-		}
-
-		public static float Hypotenuse( float edge1, float edge2 )
-		{
-			return Mathf.Sqrt( edge1 * edge1 + edge2 * edge2 );
-		}
-
-		public static float NonHypothenuseEdge( float hypotenuseEdge, float edge1 )
-		{
-			return Mathf.Sqrt( hypotenuseEdge * hypotenuseEdge - edge1 * edge1 );
-		}
-
 		public static T ReturnRandom< T >( this T[] array )
 		{
 			return array[ Random.Range( 0, array.Length ) ];
-		}
-
-		public static float ReturnRandom( this Vector2 vector )
-		{
-			return Random.Range( vector.x, vector.y );
-		}
-
-		public static float ReturnProgress( this Vector2 vector, float progress )
-		{
-			return Mathf.Lerp( vector.x, vector.y, progress );
-		}
-
-		public static float ReturnProgressInverse( this Vector2 vector, float progress )
-		{
-			return Mathf.Lerp( vector.y, vector.x, progress );
 		}
 
 		public static void DestroyAllChildren( this Transform transform )
@@ -689,19 +311,6 @@ namespace FFStudio
 		{
 			rigidbody.isKinematic = value;
 			rigidbody.useGravity  = !value;
-		}
-
-		public static float ReturnClamped( this Vector2 vector, float value )
-		{
-			return Mathf.Clamp( value, vector.x, vector.y );
-		}
-
-		public static int GetUniqueHashCode_PositiveIntegers( this Vector2Int v2 )
-		{
-			if( Mathf.Max( v2.x, v2.y ) == v2.x )
-				return v2.x * v2.x + v2.x + v2.y;
-			else
-				return v2.x + v2.y * v2.y;
 		}
 
 #if FF_OBI_IMPORTED
