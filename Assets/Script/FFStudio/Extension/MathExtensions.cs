@@ -78,5 +78,10 @@ namespace FFStudio
 		{
 			return Mathf.Sqrt( hypotenuseEdge * hypotenuseEdge - edge1 * edge1 );
 		}
+
+		public static float Remap( float originalFrom, float originalTo, float value, float targetFrom, float targetTo )
+		{
+			return Mathf.Lerp( targetFrom, targetTo, Mathf.InverseLerp( originalFrom, originalTo, value ) );
+		}
 	}
 }
