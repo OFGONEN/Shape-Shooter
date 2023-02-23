@@ -16,6 +16,7 @@ public class Shape : MonoBehaviour
   [ Title( "Components" ) ]
     [ SerializeField ] Transform shape_turnable_instant;
     [ SerializeField ] Rigidbody shape_turnable_tween_rigidbody;
+    [ SerializeField ] ShapeEdge[] shape_edge_array;
 
     RecycledTween recycledTween = new RecycledTween();
 
@@ -52,6 +53,9 @@ public class Shape : MonoBehaviour
 
 		shape_turnable_instant.localEulerAngles = Vector3.zero.SetZ( targetRotation );
 
+		for( var i = 0; i < shape_edge_array.Length; i++ )
+			shape_edge_array[ i ].OnTurnStart();
+
 		recycledTween.Recycle( DOTween.To( GetTurnableRigidbodyRotation, SetTurnableRigidbodyRotation,
 			targetRotation,
 			shape_data.shape_rotation_duration )
@@ -64,6 +68,9 @@ public class Shape : MonoBehaviour
 
     void OnTurnComplete()
     {
+		for( var i = 0; i < shape_edge_array.Length; i++ )
+			shape_edge_array[ i ].OnTurnStart();
+
 		onDoTurn = Turn;
 	}
 
