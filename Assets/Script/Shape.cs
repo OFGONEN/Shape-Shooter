@@ -11,11 +11,11 @@ public class Shape : MonoBehaviour
 {
 #region Fields
   [ Title( "Shared Data" ) ]
-    public ShapeData shape_data;
+    [ SerializeField ] ShapeData shape_data;
 
   [ Title( "Components" ) ]
-    public Transform shape_turnable_instant;
-    public Transform shape_turnable_tween;
+    [ SerializeField ] Transform shape_turnable_instant;
+    [ SerializeField ] Rigidbody shape_turnable_tween_rigidbody;
 
     RecycledTween recycledTween = new RecycledTween();
 
@@ -47,16 +47,16 @@ public class Shape : MonoBehaviour
 #region Implementation
     void Turn()
     {
-		var rotationValue = Vector3.zero.SetZ( shape_data.shape_rotation_angle );
+		var currentRotation = shape_turnable_instant.localEulerAngles.z;
+		var targetRotation  = currentRotation + shape_data.shape_rotation_angle;
 
-		shape_turnable_instant.localEulerAngles += rotationValue;
+		shape_turnable_instant.localEulerAngles = Vector3.zero.SetZ( targetRotation );
 
-		recycledTween.Recycle( shape_turnable_tween.DOLocalRotate(
-			rotationValue,
+		recycledTween.Recycle( DOTween.To( GetTurnableRigidbodyRotation, SetTurnableRigidbodyRotation,
+			targetRotation,
 			shape_data.shape_rotation_duration )
-			.SetEase( shape_data.shape_rotation_ease )
-			.SetRelative(),
-            OnTurnComplete
+			.SetEase( shape_data.shape_rotation_ease ),
+			OnTurnComplete 
 		);
 
 		EmptyDelegates();
@@ -70,6 +70,16 @@ public class Shape : MonoBehaviour
     void EmptyDelegates()
     {
 		onDoTurn = Extensions.EmptyMethod;
+	}
+
+	float GetTurnableRigidbodyRotation()
+	{
+		return shape_turnable_tween_rigidbody.rotation.eulerAngles.z;
+	}
+
+	void SetTurnableRigidbodyRotation( float rotation )
+	{
+		shape_turnable_tween_rigidbody.MoveRotation( Quaternion.Euler( 0, 0, rotation ) );
 	}
 #endregion
 

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba26c7b85998f485abbdb90c9dfed2ec, type: 3}
   m_Name: shared_shape_square_data
   m_EditorClassIdentifier: 
-  shape_rotation_angle: 90
-  shape_rotation_duration: 0.1
+  shape_rotation_angle: -90
+  shape_rotation_duration: 0.05
   shape_rotation_ease: 1
