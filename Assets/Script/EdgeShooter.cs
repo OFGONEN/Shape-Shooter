@@ -11,6 +11,7 @@ public class EdgeShooter : MonoBehaviour
 #region Fields
   [ Title( "Setup" ) ]
     [ SerializeField ] int shooter_index;
+    [ SerializeField ] ShapeData shape_data;
 
   [ Title( "Shared" ) ]
     [ SerializeField ] PoolEdge pool_edge;
@@ -37,10 +38,10 @@ public class EdgeShooter : MonoBehaviour
 #endregion
 
 #region API
-    public void Shoot( EdgeColorData data, Transform start, Transform end )
+    public void Shoot( EdgeColorData data, Transform start, Transform end, float sizeStart, float sizeEnd )
     {
 		var edge = pool_edge.GetEntity();
-		edge.Shoot( data, start, end );
+		edge.Shoot( data, start, end, shape_data.shape_edge_spawn_start, shape_data.shape_edge_spawn_end );
 	}
 #endregion
 
