@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d276ba32ab49cdc48bfd3a89004c268b, type: 3}
   m_Name: pool_edge_square
   m_EditorClassIdentifier: 
-  stackSize: 0
-  pool_entity: {fileID: 0}
+  stackSize: 16
+  pool_entity: {fileID: 6864649534192484233, guid: 7228427aba8add54a8b48ca6a20e4e93, type: 3}
