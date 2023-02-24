@@ -82,9 +82,10 @@ public class Edge : MonoBehaviour
 		transform.parent = parent;
 	}
 
-	public void StationOnShape( Vector3 localPosition )
+	public void StationOnShape( Vector3 localPosition, Vector3 size )
 	{
 		transform.localPosition = localPosition;
+		transform.localScale    = size;
 	}
 #endregion
 
