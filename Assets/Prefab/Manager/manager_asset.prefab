@@ -69,6 +69,8 @@ MonoBehaviour:
   gameSettings: {fileID: 11400000, guid: 109113abc7450a64db67bb41e0cc2dc0, type: 2}
   currentLevelData: {fileID: 11400000, guid: d35c98ef4c868d94f85bf38a98066033, type: 2}
   pool_UIPopUpText: {fileID: 11400000, guid: eaaacbd90b1464ad2b2a3a962a8a84b2, type: 2}
+  pool_edge_square: {fileID: 11400000, guid: e135e8ac4001b0948bf34621b9992a1a, type: 2}
+  pool_edge_hexagon: {fileID: 11400000, guid: a083ddd74f7b2ec41ab38eff005a2074, type: 2}
 --- !u!114 &7751064681048781016
 MonoBehaviour:
   m_ObjectHideFlags: 0
