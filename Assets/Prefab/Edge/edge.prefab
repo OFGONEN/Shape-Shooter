@@ -47,7 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7dbc171a52d29946ac780a0e64d0ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gfx_transform: {fileID: 7712577650098788395}
   _colorSetter: {fileID: 751825096565872757}
+  _rigidbody: {fileID: 7337014690478642643}
+  _collider: {fileID: 3870812483209439454}
 --- !u!54 &7337014690478642643
 Rigidbody:
   m_ObjectHideFlags: 0
