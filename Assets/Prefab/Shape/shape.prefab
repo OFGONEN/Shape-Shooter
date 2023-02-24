@@ -108,7 +108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f1dd6c3612a2d439983f32b5bcfe40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shape_data: {fileID: 0}
+  event_level_failed: {fileID: 11400000, guid: ec850936269bc2e47b26cfebd8bdad97, type: 2}
   _boxCollider: {fileID: 6688942020370090128}
+  edge_parent: {fileID: 0}
+  shape_edge_neighbor_left: {fileID: 0}
+  shape_edge_neighbor_right: {fileID: 0}
 --- !u!1 &3070507116334074687
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +326,24 @@ MonoBehaviour:
         - m_Target: {fileID: 1573146572119712952}
           m_TargetAssemblyTypeName: Shape, Assembly-CSharp
           m_MethodName: OnLevelStarted
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventListener:
+      gameEvents:
+      - {fileID: 11400000, guid: ec850936269bc2e47b26cfebd8bdad97, type: 2}
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1573146572119712952}
+          m_TargetAssemblyTypeName: Shape, Assembly-CSharp
+          m_MethodName: OnLevelComplete
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

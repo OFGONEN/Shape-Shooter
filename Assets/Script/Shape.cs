@@ -43,6 +43,12 @@ public class Shape : MonoBehaviour
     {
 		onDoTurn = Turn;
 	}
+
+	public void OnLevelComplete()
+	{
+		onDoTurn = Extensions.EmptyMethod;
+		recycledTween.Kill();
+	}
 #endregion
 
 #region Implementation
