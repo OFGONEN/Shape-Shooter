@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7dbc171a52d29946ac780a0e64d0ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorSetter: {fileID: 751825096565872757}
 --- !u!54 &7337014690478642643
 Rigidbody:
   m_ObjectHideFlags: 0
