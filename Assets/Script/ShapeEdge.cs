@@ -11,6 +11,7 @@ public class ShapeEdge : MonoBehaviour
 #region Fields
   [ Title( "Components" ) ]
     [ SerializeField ] BoxCollider _boxCollider;
+    [ SerializeField ] Transform edge_parent;
 
     TriggerMessage onTrigger;
 #endregion
@@ -45,12 +46,14 @@ public class ShapeEdge : MonoBehaviour
 #region Implementation
     void TriggerIdle( Collider collider )
     {
-
-    }
+		var edge = collider.GetComponent<ComponentHost>().HostComponent as Edge;
+		edge.OnShapeTriggerIdle( edge_parent );
+	}
 
     void TriggerDynamic( Collider collider )
     {
-
+		var edge = collider.GetComponent<ComponentHost>().HostComponent as Edge;
+		edge.OnShapeTriggerDynamic( edge_parent );
     }
 #endregion
 
