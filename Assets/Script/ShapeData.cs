@@ -4,14 +4,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 
 [ CreateAssetMenu( fileName = "shared_shape_data", menuName = "FF/Game/Shape Data" ) ]
 public class ShapeData : ScriptableObject
 {
 #region Fields
+  [ Title( "Shape" ) ]
     public float shape_rotation_angle;
     public float shape_rotation_duration;
     public Ease shape_rotation_ease;
+
+  [ Title( "Edge" ) ]
+    public float shape_edge_spawn_start;
+    public float shape_edge_spawn_end;
+    public float shape_edge_step_size;
+    public float shape_edge_step_position;
+    public float shape_edge_count;
 #endregion
 
 #region Properties
