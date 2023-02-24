@@ -87,6 +87,12 @@ public class Edge : MonoBehaviour
 		transform.localPosition = localPosition;
 		transform.localScale    = size;
 	}
+
+	public void OnLevelComplete()
+	{
+		_collider.enabled = false;
+		recycledSequence.Kill();
+	}
 #endregion
 
 #region Implementation
