@@ -69,7 +69,7 @@ public class Shape : MonoBehaviour
     void OnTurnComplete()
     {
 		for( var i = 0; i < shape_edge_array.Length; i++ )
-			shape_edge_array[ i ].OnTurnStart();
+			shape_edge_array[ i ].OnTurnStop();
 
 		onDoTurn = Turn;
 	}
