@@ -29,7 +29,7 @@ public class Edge : MonoBehaviour
 #endregion
 
 #region API
-    public void Shoot( EdgeColorData data, Transform start, Transform end )
+    public void Shoot( EdgeColorData data, Transform start, Transform end, float sizeStart, float sizeEnd )
     {
 		gameObject.SetActive( true );
 		_collider.enabled = true;
@@ -40,21 +40,28 @@ public class Edge : MonoBehaviour
 		transform.position = start.position;
 		transform.rotation = start.rotation;
 
-		gfx_transform.localScale = Vector3.one.SetX( GameSettings.Instance.edge_spawn_scale_start );
+		var duration = Vector3.Distance( end.position, start.position ) / GameSettings.Instance.edge_movement_speed;
+
+		gfx_transform.localScale = Vector3.one.SetX( sizeStart );
 
 		var sequence = recycledSequence.Recycle();
 
 		sequence.Append(
-			gfx_transform.DOScaleX( GameSettings.Instance.edge_spawn_scale_end,
-				GameSettings.Instance.edge_spawn_scale_end )
+			gfx_transform.DOScaleX( sizeEnd,
+				GameSettings.Instance.edge_spawn_duration )
 				.SetEase( GameSettings.Instance.edge_spawn_ease )
 		);
 
 		sequence.Append( _rigidbody.DOMove(
 			end.position,
-			GameSettings.Instance.edge_movement_speed )
+			duration )
 			.SetEase( Ease.Linear )
-			.SetSpeedBased()
+		);
+
+		sequence.Join(
+			gfx_transform.DOScaleX( 1,
+				duration )
+				.SetEase( Ease.Linear )
 		);
 	}
 
