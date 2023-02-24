@@ -10,6 +10,12 @@ namespace FFStudio
     {
 #region Fields (Settings)
     // Info: You can use Title() attribute ONCE for every game-specific group of settings.
+    [ Title( "Edge" ) ]
+		[ LabelText( "Edge Spawn Scale Start" ) ] public float edge_spawn_scale_start;
+		[ LabelText( "Edge Spawn Scale End" ) ] public float edge_spawn_scale_end;
+		[ LabelText( "Edge Spawn Duration" ) ] public float edge_spawn_duration;
+		[ LabelText( "Edge Spawn Ease" ) ] public Ease edge_spawn_ease;
+		[ LabelText( "Edge Movement Speed" ) ] public float edge_movement_speed;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
