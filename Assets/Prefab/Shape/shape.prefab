@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 8197099784259457835}
   - component: {fileID: 4655710987467726758}
   m_Layer: 0
-  m_Name: parent_edge_1
+  m_Name: parent_edge_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   shape_data: {fileID: 0}
   event_level_failed: {fileID: 11400000, guid: ec850936269bc2e47b26cfebd8bdad97, type: 2}
   _boxCollider: {fileID: 6688942020370090128}
-  edge_parent: {fileID: 0}
+  edge_parent: {fileID: 7901135883825743302}
   shape_edge_neighbor_left: {fileID: 0}
   shape_edge_neighbor_right: {fileID: 0}
 --- !u!1 &3070507116334074687
@@ -251,7 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7353120221497410046}
   m_Layer: 0
-  m_Name: target_edge
+  m_Name: parent_edge_target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -270,7 +270,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2908092480598568555}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4398372557212818763
 GameObject:
@@ -464,7 +464,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2908092480598568555}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8253308142961675404
 GameObject:
@@ -475,8 +475,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2908092480598568555}
+  - component: {fileID: 6022794336764643189}
   m_Layer: 0
-  m_Name: parent_edge_shooter_1
+  m_Name: parent_edge_shooter_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -494,11 +495,29 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7353120221497410046}
   - {fileID: 5207158301793400228}
+  - {fileID: 7353120221497410046}
   m_Father: {fileID: 2162546543072301919}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6022794336764643189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8253308142961675404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b55b0f90adf4f149b5b6ccafb2b1819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shooter_index: 0
+  shape_data: {fileID: 0}
+  pool_edge: {fileID: 0}
+  list_edge_shooter: {fileID: 11400000, guid: 1399b839b41866644907e9afe9767ecf, type: 2}
+  shoot_transform_start: {fileID: 5207158301793400228}
+  shoot_transform_end: {fileID: 7353120221497410046}
 --- !u!1 &8693502092438225208
 GameObject:
   m_ObjectHideFlags: 0
