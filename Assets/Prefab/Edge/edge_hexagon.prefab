@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.06
       objectReference: {fileID: 0}
+    - target: {fileID: 4649814057900082817, guid: 3d427c3d524374d4b9da7f397d7563ad, type: 3}
+      propertyPath: pool_edge
+      value: 
+      objectReference: {fileID: 11400000, guid: e135e8ac4001b0948bf34621b9992a1a, type: 2}
     - target: {fileID: 5413145216246719471, guid: 3d427c3d524374d4b9da7f397d7563ad, type: 3}
       propertyPath: m_Name
       value: edge_hexagon

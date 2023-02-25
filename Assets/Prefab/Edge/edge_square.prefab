@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 4649814057900082817, guid: 3d427c3d524374d4b9da7f397d7563ad, type: 3}
+      propertyPath: pool_edge
+      value: 
+      objectReference: {fileID: 11400000, guid: a083ddd74f7b2ec41ab38eff005a2074, type: 2}
     - target: {fileID: 5413145216246719471, guid: 3d427c3d524374d4b9da7f397d7563ad, type: 3}
       propertyPath: m_Name
       value: edge_square

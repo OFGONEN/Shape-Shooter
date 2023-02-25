@@ -10,6 +10,9 @@ using Sirenix.OdinInspector;
 public class Edge : MonoBehaviour
 {
 #region Fields
+  [ Title( "Shared" ) ]
+	[ SerializeField ] PoolEdge pool_edge;
+
   [ Title( "Components" ) ]
     [ SerializeField ] Transform gfx_transform;
     [ SerializeField ] ColorSetter _colorSetter;
@@ -92,6 +95,13 @@ public class Edge : MonoBehaviour
 	{
 		_collider.enabled = false;
 		recycledSequence.Kill();
+	}
+
+	public void OnLevelUnloadStart()
+	{
+		pool_edge.ReturnEntity( this );
+		transform.localScale     = Vector3.one;
+		gfx_transform.localScale = Vector3.one;
 	}
 #endregion
 
