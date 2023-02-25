@@ -870,6 +870,98 @@ PrefabInstance:
       propertyPath: shape_edge_array.Array.data[3]
       value: 
       objectReference: {fileID: 6001825728047014064}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 599226296731931798}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 5998358172603059180}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1159954525396452256}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 6001825728047014064}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnEdgesMerged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnEdgesMerged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: OnEdgesMerged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: OnEdgesMerged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ShapeEdge, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ShapeEdge, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: ShapeEdge, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: ShapeEdge, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883144346938902010, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: eventPairs.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2162546543072301919, guid: da304addcaef64effa2bd18decd80993, type: 3}
       propertyPath: m_RootOrder
       value: 0

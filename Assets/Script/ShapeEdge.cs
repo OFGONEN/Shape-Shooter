@@ -18,9 +18,10 @@ public class ShapeEdge : MonoBehaviour
     [ SerializeField ] ShapeEdge shape_edge_neighbor_left;
     [ SerializeField ] ShapeEdge shape_edge_neighbor_right;
 
-	[ System.NonSerialized ] public List< Edge > edge_list = new List< Edge >();
+	[ System.NonSerialized, ShowInInspector, ReadOnly ] public List< Edge > edge_list = new List< Edge >();
 	List< Edge > edge_list_temp = new List< Edge >();
 
+	UnityMessage onEdgesMerged;
     TriggerMessage onTrigger;
 	Cooldown cooldown = new Cooldown();
 #endregion
@@ -33,7 +34,8 @@ public class ShapeEdge : MonoBehaviour
 #region Unity API
     private void Awake()
     {
-		onTrigger = TriggerIdle;
+		onTrigger     = TriggerIdle;
+		onEdgesMerged = Extensions.EmptyMethod;
 	}
 #endregion
 
@@ -55,9 +57,35 @@ public class ShapeEdge : MonoBehaviour
 		cooldown.Start( Time.fixedDeltaTime, CollectTriggeredEdges );
 		// CollectTriggeredEdges();
 	}
+
+	public Edge GetEdgeAtIndex( int index )
+	{
+		if( index < 0 || index >= edge_list.Count )
+			return null;
+		else
+			return edge_list[ index ];
+	}
+
+	public void OnEdgesMerged()
+	{
+		onEdgesMerged();
+	}
+
+	public void RemoveEdgeAtIndex( int index )
+	{
+		onEdgesMerged = MergeEdges;
+		edge_list[ index ] = null;
+	}
 #endregion
 
 #region Implementation
+	void MergeEdges()
+	{
+		onEdgesMerged = Extensions.EmptyMethod;
+
+		//todo move edges to correct positions
+	}
+
     void TriggerIdle( Collider collider )
     {
 		var edge = collider.GetComponent< ComponentHost >().HostComponent as Edge;
@@ -79,9 +107,9 @@ public class ShapeEdge : MonoBehaviour
 
 	void StationEdge( Edge edge )
 	{
-		var edgeIndex = edge_list.Count;
+		var edgeIndex = edge_list.Count - 1;
 
-		edge.StationOnShape( transform, ( edgeIndex + 1 ) * shape_data.shape_edge_step_position * Vector3.forward, Vector3.one.OffsetX( edgeIndex * shape_data.shape_edge_step_size ) );
+		edge.StationOnShape( this, edgeIndex, ( edgeIndex + 2 ) * shape_data.shape_edge_step_position * Vector3.forward, Vector3.one.OffsetX( edgeIndex * shape_data.shape_edge_step_size ) );
 
 		_boxCollider.transform.localScale = Vector3.one.SetZ( ( edge_list.Count + 1 ) * shape_data.shape_edge_step_size );
 	}
@@ -93,8 +121,6 @@ public class ShapeEdge : MonoBehaviour
 		for( var i = 0; i < edge_list_temp.Count; i++ )
 		{
 			var edge = edge_list_temp[ i ];
-
-			FFLogger.Log( "Edge:", edge_list_temp[ i ] );
 
 			edge_list.Add( edge );
 			StationEdge( edge );
