@@ -22,6 +22,7 @@ public class ShapeEdge : MonoBehaviour
 	List< Edge > edge_list_temp = new List< Edge >();
 
     TriggerMessage onTrigger;
+	Cooldown cooldown = new Cooldown();
 #endregion
 
 #region Properties
@@ -50,7 +51,9 @@ public class ShapeEdge : MonoBehaviour
     public void OnTurnStop()
     {
 		onTrigger = TriggerIdle;
-		CollectTriggeredEdges();
+
+		cooldown.Start( Time.fixedDeltaTime, CollectTriggeredEdges );
+		// CollectTriggeredEdges();
 	}
 #endregion
 
