@@ -61,11 +61,9 @@ public class ShapeEdge : MonoBehaviour
 		edge.OnShapeTriggerIdle();
 
 		edge_list.Add( edge );
+		StationEdge( edge );
 
-		if( edge_list.Count > shape_data.shape_edge_count )
-			event_level_failed.Raise();
-		else
-			StationEdge( edge );
+		CheckIfLevelFailed();
 	}
 
     void TriggerDynamic( Collider collider )
@@ -99,6 +97,8 @@ public class ShapeEdge : MonoBehaviour
 			StationEdge( edge );
 		}
 
+		CheckIfLevelFailed();
+
 		edge_list_temp.Clear();
 	}
 
@@ -114,6 +114,12 @@ public class ShapeEdge : MonoBehaviour
 			return 1;
 		else
 			return -1;
+	}
+
+	void CheckIfLevelFailed()
+	{
+		if( edge_list.Count > shape_data.shape_edge_count )
+			event_level_failed.Raise();
 	}
 #endregion
 
