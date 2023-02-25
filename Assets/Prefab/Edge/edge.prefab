@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool_edge: {fileID: 0}
+  event_shape_merged: {fileID: 11400000, guid: e57847f844c616541bd1334197ef1165, type: 2}
   gfx_transform: {fileID: 7712577650098788395}
   _colorSetter: {fileID: 751825096565872757}
   _rigidbody: {fileID: 7337014690478642643}

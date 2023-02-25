@@ -12,6 +12,7 @@ public class Edge : MonoBehaviour
 #region Fields
   [ Title( "Shared" ) ]
 	[ SerializeField ] PoolEdge pool_edge;
+	[ SerializeField ] GameEvent event_shape_merged;
 
   [ Title( "Components" ) ]
     [ SerializeField ] Transform gfx_transform;
@@ -20,8 +21,13 @@ public class Edge : MonoBehaviour
     [ SerializeField ] Collider _collider;
     
     EdgeColorData edge_color_data;
-
 	RecycledSequence recycledSequence = new RecycledSequence();
+
+	[ ShowInInspector, ReadOnly ] ShapeEdge shape_edge;
+	[ ShowInInspector, ReadOnly ] int shape_edge_index;
+	[ ShowInInspector, ReadOnly ] List< Edge > edge_neighbor_list = new List< Edge >();
+
+	UnityMessage onMerge;
 #endregion
 
 #region Properties
@@ -34,6 +40,9 @@ public class Edge : MonoBehaviour
 #region API
     public void Shoot( EdgeColorData data, Transform start, Transform end, float sizeStart, float sizeEnd )
     {
+		edge_neighbor_list.Clear();
+		onMerge = Merge;
+
 		gameObject.SetActive( true );
 		_collider.enabled = true;
 
@@ -84,12 +93,48 @@ public class Edge : MonoBehaviour
 		gameObject.SetActive( false );
 	}
 
-	public void StationOnShape( Transform parent, Vector3 localPosition, Vector3 size )
+	public void StationOnShape( ShapeEdge shapeEdge, int edgeIndex, Vector3 localPosition, Vector3 size )
 	{
+		shape_edge       = shapeEdge;
+		shape_edge_index = edgeIndex;
+
 		gameObject.SetActive( true );
-		transform.parent        = parent;
+		transform.parent        = shapeEdge.transform;
 		transform.localPosition = localPosition;
 		transform.localScale    = size;
+
+		var edgeDown  = shape_edge.GetEdgeAtIndex( edgeIndex - 1 );
+		var edgeRight = shape_edge.ShapeEdgeNeighborRight.GetEdgeAtIndex( edgeIndex );
+		var edgeLeft  = shape_edge.ShapeEdgeNeighborLeft.GetEdgeAtIndex( edgeIndex );
+
+		if( edgeDown != null && edgeDown.ColorID == ColorID )
+		{
+			edge_neighbor_list.Add( edgeDown );
+			edgeDown.AddAnotherEdgeAsNeighbor( this );
+		}
+		if( edgeRight != null && edgeRight.ColorID == ColorID )
+		{
+			edge_neighbor_list.Add( edgeRight );
+			edgeRight.AddAnotherEdgeAsNeighbor( this );
+		}
+		if( edgeLeft != null && edgeLeft.ColorID == ColorID )
+		{
+			edge_neighbor_list.Add( edgeLeft );
+			edgeLeft.AddAnotherEdgeAsNeighbor( this );
+		}
+
+		var merge = CheckIfMerge();
+
+		if( merge || ( edgeDown != null && edgeDown.CheckIfMerge() ) || ( edgeRight != null && edgeRight.CheckIfMerge() ) || ( edgeLeft != null && edgeLeft.CheckIfMerge() ) )
+		{
+			OnMerge();
+			event_shape_merged.Raise();
+		}
+	}
+
+	public void AddAnotherEdgeAsNeighbor( Edge edge )
+	{
+		edge_neighbor_list.Add( edge );
 	}
 
 	public void OnLevelComplete()
@@ -100,13 +145,41 @@ public class Edge : MonoBehaviour
 
 	public void OnLevelUnloadStart()
 	{
-		pool_edge.ReturnEntity( this );
-		transform.localScale     = Vector3.one;
-		gfx_transform.localScale = Vector3.one;
+		ReturnToPool();
+	}
+
+	public bool CheckIfMerge()
+	{
+		return edge_neighbor_list.Count >= GameSettings.Instance.edge_merge_count;
+	}
+
+	public void OnMerge()
+	{
+		onMerge();
 	}
 #endregion
 
 #region Implementation
+	void ReturnToPool()
+	{
+		pool_edge.ReturnEntity( this );
+		transform.localScale     = Vector3.one;
+		gfx_transform.localScale = Vector3.one;
+	}
+
+	void Merge()
+	{
+		onMerge = Extensions.EmptyMethod;
+
+		shape_edge.RemoveEdgeAtIndex( shape_edge_index );
+
+		for( var i = 0; i < edge_neighbor_list.Count; i++ )
+			edge_neighbor_list[ i ].OnMerge();
+
+		ReturnToPool();
+		//todo spawn particle
+	}
+
     void UpdateVisual()
     {
 		_colorSetter.SetColor( edge_color_data.edge_color );
