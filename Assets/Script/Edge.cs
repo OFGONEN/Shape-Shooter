@@ -57,9 +57,10 @@ public class Edge : MonoBehaviour
 
 		var duration = Vector3.Distance( end.position, start.position ) / GameSettings.Instance.edge_movement_speed;
 
-		gfx_transform.localScale                 = Vector3.one.SetX( sizeStart );
-		gfx_corner_transform_left.localPosition  = Vector3.right * sizeStart / 2f * shape_data.shape_edge_length * -1f;
-		gfx_corner_transform_right.localPosition = Vector3.right * sizeStart / 2f * shape_data.shape_edge_length;
+		gfx_transform.localScale = Vector3.one.SetX( sizeStart );
+		OnGFXScaleUpdate();
+		// gfx_corner_transform_left.localPosition  = Vector3.right * sizeStart / 2f * shape_data.shape_edge_length * -1f;
+		// gfx_corner_transform_right.localPosition = Vector3.right * sizeStart / 2f * shape_data.shape_edge_length;
 
 		var sequence = recycledSequence.Recycle();
 
@@ -87,17 +88,13 @@ public class Edge : MonoBehaviour
 	public void OnShapeTriggerIdle()
 	{
 		recycledSequence.Kill();
-		gfx_transform.localScale = Vector3.one;
-		_collider.enabled        = false;
-		OnGFXScaleUpdate();
+		_collider.enabled = false;
 	}
 
 	public void OnShapeTriggerDynamic()
 	{
 		recycledSequence.Kill();
-		gfx_transform.localScale = Vector3.one;
-		_collider.enabled        = false;
-		OnGFXScaleUpdate();
+		_collider.enabled = false;
 
 		gameObject.SetActive( false );
 	}
@@ -114,7 +111,7 @@ public class Edge : MonoBehaviour
 			.SetEase( GameSettings.Instance.edge_reposition_ease )
 		);
 
-		sequence.Join( transform.DOScale(
+		sequence.Join( gfx_transform.DOScale(
 			size,
 			GameSettings.Instance.edge_reposition_duration )
 			.SetEase( GameSettings.Instance.edge_reposition_ease )
@@ -128,9 +125,10 @@ public class Edge : MonoBehaviour
 		shape_edge_index = edgeIndex;
 
 		gameObject.SetActive( true );
-		transform.parent        = shapeEdge.transform;
-		transform.localPosition = localPosition;
-		transform.localScale    = size;
+		transform.parent         = shapeEdge.transform;
+		transform.localPosition  = localPosition;
+		gfx_transform.localScale = size;
+		OnGFXScaleUpdate();
 
 		var edgeDown  = shape_edge.GetEdgeAtIndex( edgeIndex - 1 );
 		var edgeRight = shape_edge.ShapeEdgeNeighborRight.GetEdgeAtIndex( edgeIndex );
@@ -199,7 +197,6 @@ public class Edge : MonoBehaviour
 	void ReturnToPool()
 	{
 		pool_edge.ReturnEntity( this );
-		transform.localScale     = Vector3.one;
 		gfx_transform.localScale = Vector3.one;
 		OnGFXScaleUpdate();
 	}
