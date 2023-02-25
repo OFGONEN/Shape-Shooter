@@ -59,10 +59,17 @@ public class Shape : MonoBehaviour
 		for( var i = 0; i < shape_edge_array.Length; i++ )
 			shape_edge_array[ i ].OnTurnStart();
 
-		recycledTween.Recycle( DOTween.To( GetTurnableRigidbodyRotation, SetTurnableRigidbodyRotation,
-			targetRotation,
+		// recycledTween.Recycle( DOTween.To( GetTurnableRigidbodyRotation, SetTurnableRigidbodyRotation,
+		// 	targetRotation,
+		// 	shape_data.shape_rotation_duration )
+		// 	.SetEase( shape_data.shape_rotation_ease ),
+		// 	OnTurnComplete 
+		// );
+
+		recycledTween.Recycle( shape_turnable_tween_rigidbody.DORotate( Vector3.zero.SetZ( targetRotation ), 
 			shape_data.shape_rotation_duration )
-			.SetEase( shape_data.shape_rotation_ease ),
+			.SetEase( shape_data.shape_rotation_ease )
+			.SetUpdate( UpdateType.Fixed ),
 			OnTurnComplete 
 		);
 
