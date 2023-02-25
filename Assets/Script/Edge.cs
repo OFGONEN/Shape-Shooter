@@ -13,9 +13,12 @@ public class Edge : MonoBehaviour
   [ Title( "Shared" ) ]
 	[ SerializeField ] PoolEdge pool_edge;
 	[ SerializeField ] GameEvent event_shape_merged;
+	[ SerializeField ] ShapeData shape_data;
 
   [ Title( "Components" ) ]
     [ SerializeField ] Transform gfx_transform;
+    [ SerializeField ] Transform gfx_corner_transform_left;
+    [ SerializeField ] Transform gfx_corner_transform_right;
     [ SerializeField ] ColorSetter _colorSetter;
     [ SerializeField ] Rigidbody _rigidbody;
     [ SerializeField ] Collider _collider;
@@ -54,7 +57,9 @@ public class Edge : MonoBehaviour
 
 		var duration = Vector3.Distance( end.position, start.position ) / GameSettings.Instance.edge_movement_speed;
 
-		gfx_transform.localScale = Vector3.one.SetX( sizeStart );
+		gfx_transform.localScale                 = Vector3.one.SetX( sizeStart );
+		gfx_corner_transform_left.localPosition  = Vector3.right * sizeStart / 2f * shape_data.shape_edge_length * -1f;
+		gfx_corner_transform_right.localPosition = Vector3.right * sizeStart / 2f * shape_data.shape_edge_length;
 
 		var sequence = recycledSequence.Recycle();
 
@@ -62,6 +67,7 @@ public class Edge : MonoBehaviour
 			gfx_transform.DOScaleX( sizeEnd,
 				GameSettings.Instance.edge_spawn_duration )
 				.SetEase( GameSettings.Instance.edge_spawn_ease )
+				.OnUpdate( OnGFXScaleUpdate )
 		);
 
 		sequence.Append( _rigidbody.DOMove(
@@ -74,6 +80,7 @@ public class Edge : MonoBehaviour
 			gfx_transform.DOScaleX( 1,
 				duration )
 				.SetEase( Ease.Linear )
+				.OnUpdate( OnGFXScaleUpdate )
 		);
 	}
 
@@ -82,6 +89,7 @@ public class Edge : MonoBehaviour
 		recycledSequence.Kill();
 		gfx_transform.localScale = Vector3.one;
 		_collider.enabled        = false;
+		OnGFXScaleUpdate();
 	}
 
 	public void OnShapeTriggerDynamic()
@@ -89,6 +97,7 @@ public class Edge : MonoBehaviour
 		recycledSequence.Kill();
 		gfx_transform.localScale = Vector3.one;
 		_collider.enabled        = false;
+		OnGFXScaleUpdate();
 
 		gameObject.SetActive( false );
 	}
@@ -109,6 +118,7 @@ public class Edge : MonoBehaviour
 			size,
 			GameSettings.Instance.edge_reposition_duration )
 			.SetEase( GameSettings.Instance.edge_reposition_ease )
+			.OnUpdate( OnGFXScaleUpdate )
 		);
 	}
 
@@ -179,11 +189,19 @@ public class Edge : MonoBehaviour
 #endregion
 
 #region Implementation
+	void OnGFXScaleUpdate()
+	{
+		var scaleX                                   = gfx_transform.localScale.x;
+		    gfx_corner_transform_left.localPosition  = Vector3.right * scaleX / 2f * shape_data.shape_edge_length * -1f;
+		    gfx_corner_transform_right.localPosition = Vector3.right * scaleX / 2f * shape_data.shape_edge_length;
+	}
+
 	void ReturnToPool()
 	{
 		pool_edge.ReturnEntity( this );
 		transform.localScale     = Vector3.one;
 		gfx_transform.localScale = Vector3.one;
+		OnGFXScaleUpdate();
 	}
 
 	void Merge()
