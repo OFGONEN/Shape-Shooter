@@ -38,10 +38,12 @@ public class EdgeShooter : MonoBehaviour
 #endregion
 
 #region API
-    public void Shoot( EdgeColorData data, Transform start, Transform end, float sizeStart, float sizeEnd )
+    [ Button() ]
+    public void Shoot( EdgeColorData data )
     {
 		var edge = pool_edge.GetEntity();
-		edge.Shoot( data, start, end, shape_data.shape_edge_spawn_start, shape_data.shape_edge_spawn_end );
+
+		edge.Shoot( data, shoot_transform_start, shoot_transform_end, shape_data.shape_edge_spawn_start, shape_data.shape_edge_spawn_end );
 	}
 #endregion
 
