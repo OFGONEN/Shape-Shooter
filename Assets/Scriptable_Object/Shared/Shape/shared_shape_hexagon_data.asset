@@ -15,6 +15,7 @@ MonoBehaviour:
   shape_rotation_angle: -90
   shape_rotation_duration: 0.05
   shape_rotation_ease: 1
+  shape_edge_length: 0.86
   shape_edge_spawn_start: 0.5
   shape_edge_spawn_end: 2
   shape_edge_step_size: 0.12

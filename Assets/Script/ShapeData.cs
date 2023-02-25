@@ -16,6 +16,7 @@ public class ShapeData : ScriptableObject
     public Ease shape_rotation_ease;
 
   [ Title( "Edge" ) ]
+    public float shape_edge_length;
     public float shape_edge_spawn_start;
     public float shape_edge_spawn_end;
     public float shape_edge_step_size;
