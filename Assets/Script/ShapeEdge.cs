@@ -117,7 +117,7 @@ public class ShapeEdge : MonoBehaviour
 	{
 		var edgeIndex = edge_list.Count - 1;
 
-		edge.StationOnShape( this, edgeIndex, ( edgeIndex + 2 ) * shape_data.shape_edge_step_position * Vector3.forward, Vector3.one.OffsetX( edgeIndex * shape_data.shape_edge_step_size ) );
+		edge.StationOnShape( this, edgeIndex, ( edgeIndex + 2 ) * shape_data.shape_edge_step_position * Vector3.forward, Vector3.one.OffsetX( ( edgeIndex + 1 ) * shape_data.shape_edge_step_size ) );
 
 		_boxCollider.transform.localScale = Vector3.one.SetZ( ( edge_list.Count + 1 ) * shape_data.shape_edge_step_size );
 	}
