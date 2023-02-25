@@ -93,6 +93,25 @@ public class Edge : MonoBehaviour
 		gameObject.SetActive( false );
 	}
 
+	public void RepositionOnShape( int edgeIndex, Vector3 localPosition, Vector3 size )
+	{
+		shape_edge_index = edgeIndex;
+
+		var sequence = recycledSequence.Recycle();
+
+		sequence.Append( transform.DOLocalMove(
+			localPosition,
+			GameSettings.Instance.edge_reposition_duration )
+			.SetEase( GameSettings.Instance.edge_reposition_ease )
+		);
+
+		sequence.Join( transform.DOScale(
+			size,
+			GameSettings.Instance.edge_reposition_duration )
+			.SetEase( GameSettings.Instance.edge_reposition_ease )
+		);
+	}
+
 	public void StationOnShape( ShapeEdge shapeEdge, int edgeIndex, Vector3 localPosition, Vector3 size )
 	{
 		shape_edge       = shapeEdge;
