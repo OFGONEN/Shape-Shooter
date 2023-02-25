@@ -24,8 +24,6 @@ namespace FFStudio
 #region Unity API
 		void Awake()
 		{
-			theRenderer = GetComponent< Renderer >();
-
 			propertyBlock = new MaterialPropertyBlock();
 		}
 #endregion
