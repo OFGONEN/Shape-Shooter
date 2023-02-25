@@ -14,7 +14,6 @@ public class Shape : MonoBehaviour
     [ SerializeField ] ShapeData shape_data;
 
   [ Title( "Components" ) ]
-    [ SerializeField ] Transform shape_turnable_instant;
     [ SerializeField ] Rigidbody shape_turnable_tween_rigidbody;
     [ SerializeField ] ShapeEdge[] shape_edge_array;
 
@@ -54,10 +53,8 @@ public class Shape : MonoBehaviour
 #region Implementation
     void Turn()
     {
-		var currentRotation = shape_turnable_instant.localEulerAngles.z;
+		var currentRotation = shape_turnable_tween_rigidbody.transform.localEulerAngles.z;
 		var targetRotation  = currentRotation + shape_data.shape_rotation_angle;
-
-		shape_turnable_instant.localEulerAngles = Vector3.zero.SetZ( targetRotation );
 
 		for( var i = 0; i < shape_edge_array.Length; i++ )
 			shape_edge_array[ i ].OnTurnStart();
