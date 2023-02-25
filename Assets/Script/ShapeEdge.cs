@@ -84,6 +84,14 @@ public class ShapeEdge : MonoBehaviour
 		onEdgesMerged = Extensions.EmptyMethod;
 
 		//todo move edges to correct positions
+		for( var i = edge_list.Count - 1; i >= 0; i-- )
+			if( edge_list[ i ] == null )
+				edge_list.RemoveAt( i );
+			
+		for( var i = 0; i < edge_list.Count; i++ )
+			RepositionEdge( edge_list[ i ], i );
+
+		_boxCollider.transform.localScale = Vector3.one.SetZ( ( edge_list.Count + 1 ) * shape_data.shape_edge_step_size );
 	}
 
     void TriggerIdle( Collider collider )
@@ -112,6 +120,13 @@ public class ShapeEdge : MonoBehaviour
 		edge.StationOnShape( this, edgeIndex, ( edgeIndex + 2 ) * shape_data.shape_edge_step_position * Vector3.forward, Vector3.one.OffsetX( edgeIndex * shape_data.shape_edge_step_size ) );
 
 		_boxCollider.transform.localScale = Vector3.one.SetZ( ( edge_list.Count + 1 ) * shape_data.shape_edge_step_size );
+	}
+
+	void RepositionEdge( Edge edge, int index )
+	{
+		edge.RepositionOnShape( index,
+			( index + 2 ) * shape_data.shape_edge_step_position * Vector3.forward,
+			Vector3.one.OffsetX( index * shape_data.shape_edge_step_size ) );
 	}
 
 	void CollectTriggeredEdges()
