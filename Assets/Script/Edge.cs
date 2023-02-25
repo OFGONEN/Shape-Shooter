@@ -86,6 +86,7 @@ public class Edge : MonoBehaviour
 
 	public void StationOnShape( Transform parent, Vector3 localPosition, Vector3 size )
 	{
+		gameObject.SetActive( true );
 		transform.parent        = parent;
 		transform.localPosition = localPosition;
 		transform.localScale    = size;
