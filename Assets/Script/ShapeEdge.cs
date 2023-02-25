@@ -15,7 +15,6 @@ public class ShapeEdge : MonoBehaviour
 
   [ Title( "Components" ) ]
     [ SerializeField ] BoxCollider _boxCollider;
-    [ SerializeField ] Transform edge_parent;
     [ SerializeField ] ShapeEdge shape_edge_neighbor_left;
     [ SerializeField ] ShapeEdge shape_edge_neighbor_right;
 
@@ -59,7 +58,7 @@ public class ShapeEdge : MonoBehaviour
     void TriggerIdle( Collider collider )
     {
 		var edge = collider.GetComponent< ComponentHost >().HostComponent as Edge;
-		edge.OnShapeTriggerIdle( edge_parent );
+		edge.OnShapeTriggerIdle();
 
 		edge_list.Add( edge );
 
@@ -72,7 +71,7 @@ public class ShapeEdge : MonoBehaviour
     void TriggerDynamic( Collider collider )
     {
 		var edge = collider.GetComponent< ComponentHost >().HostComponent as Edge;
-		edge.OnShapeTriggerDynamic( edge_parent );
+		edge.OnShapeTriggerDynamic();
 
 		edge_list_temp.Add( edge );
 	}
@@ -81,9 +80,9 @@ public class ShapeEdge : MonoBehaviour
 	{
 		var edgeIndex = edge_list.Count;
 
-		edge.StationOnShape( edgeIndex * shape_data.shape_edge_step_position * Vector3.forward, Vector3.one.OffsetX( edgeIndex * shape_data.shape_edge_step_size ) );
+		edge.StationOnShape( transform, ( edgeIndex + 1 ) * shape_data.shape_edge_step_position * Vector3.forward, Vector3.one.OffsetX( edgeIndex * shape_data.shape_edge_step_size ) );
 
-		transform.localScale = Vector3.one.SetZ( ( edge_list.Count + 1 ) * shape_data.shape_edge_step_size );
+		_boxCollider.transform.localScale = Vector3.one.SetZ( ( edge_list.Count + 1 ) * shape_data.shape_edge_step_size );
 	}
 
 	void CollectTriggeredEdges()

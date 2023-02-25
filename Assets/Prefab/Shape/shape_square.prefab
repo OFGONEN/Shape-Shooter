@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 382377785405378661}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0.68, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 867358129936886397}
@@ -79,7 +79,6 @@ MonoBehaviour:
   shape_data: {fileID: 11400000, guid: d91f840875b2f4da3acd798023f0a8bc, type: 2}
   event_level_failed: {fileID: 11400000, guid: ec850936269bc2e47b26cfebd8bdad97, type: 2}
   _boxCollider: {fileID: 2281540797513330293}
-  edge_parent: {fileID: 2696231642739281654}
   shape_edge_neighbor_left: {fileID: 5998358172603059180}
   shape_edge_neighbor_right: {fileID: 6001825728047014064}
 --- !u!1 &1186506228144565194
@@ -109,7 +108,7 @@ Transform:
   m_GameObject: {fileID: 1186506228144565194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0.12}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 173910966041224127}
@@ -184,7 +183,7 @@ Transform:
   m_GameObject: {fileID: 1825546509633295769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0.12}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6982557263033829571}
@@ -289,7 +288,7 @@ Transform:
   m_GameObject: {fileID: 2916736744487594395}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.68, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5310379127322584904}
@@ -311,7 +310,6 @@ MonoBehaviour:
   shape_data: {fileID: 11400000, guid: d91f840875b2f4da3acd798023f0a8bc, type: 2}
   event_level_failed: {fileID: 11400000, guid: ec850936269bc2e47b26cfebd8bdad97, type: 2}
   _boxCollider: {fileID: 7521715543626985618}
-  edge_parent: {fileID: 2696231642739281654}
   shape_edge_neighbor_left: {fileID: 1159954525396452256}
   shape_edge_neighbor_right: {fileID: 599226296731931798}
 --- !u!1 &3649808328113075966
@@ -341,7 +339,7 @@ Transform:
   m_GameObject: {fileID: 3649808328113075966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0.12}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 121668145290361663}
@@ -446,7 +444,7 @@ Transform:
   m_GameObject: {fileID: 5436268563599705807}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0.68, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2267626493931654176}
@@ -468,7 +466,6 @@ MonoBehaviour:
   shape_data: {fileID: 11400000, guid: d91f840875b2f4da3acd798023f0a8bc, type: 2}
   event_level_failed: {fileID: 11400000, guid: ec850936269bc2e47b26cfebd8bdad97, type: 2}
   _boxCollider: {fileID: 2442338298636859834}
-  edge_parent: {fileID: 2696231642739281654}
   shape_edge_neighbor_left: {fileID: 599226296731931798}
   shape_edge_neighbor_right: {fileID: 1159954525396452256}
 --- !u!1 &6121575690563940732
@@ -1013,6 +1010,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7495980973925817386, guid: da304addcaef64effa2bd18decd80993, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 7901135883825743302, guid: da304addcaef64effa2bd18decd80993, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1023,7 +1024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8197099784259457835, guid: da304addcaef64effa2bd18decd80993, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.12
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8197099784259457835, guid: da304addcaef64effa2bd18decd80993, type: 3}
       propertyPath: m_LocalPosition.x

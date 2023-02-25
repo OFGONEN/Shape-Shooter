@@ -65,25 +65,25 @@ public class Edge : MonoBehaviour
 		);
 	}
 
-	public void OnShapeTriggerIdle( Transform parent )
+	public void OnShapeTriggerIdle()
 	{
 		recycledSequence.Kill();
-		_collider.enabled = false;
-
-		transform.parent = parent;
+		gfx_transform.localScale = Vector3.one;
+		_collider.enabled        = false;
 	}
 
-	public void OnShapeTriggerDynamic( Transform parent )
+	public void OnShapeTriggerDynamic()
 	{
 		recycledSequence.Kill();
-		_collider.enabled = false;
+		gfx_transform.localScale = Vector3.one;
+		_collider.enabled        = false;
 
 		gameObject.SetActive( false );
-		transform.parent = parent;
 	}
 
-	public void StationOnShape( Vector3 localPosition, Vector3 size )
+	public void StationOnShape( Transform parent, Vector3 localPosition, Vector3 size )
 	{
+		transform.parent        = parent;
 		transform.localPosition = localPosition;
 		transform.localScale    = size;
 	}
