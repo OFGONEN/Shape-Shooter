@@ -14,6 +14,8 @@ namespace FFStudio
 		[ LabelText( "Edge Spawn Duration" ) ] public float edge_spawn_duration;
 		[ LabelText( "Edge Spawn Ease" ) ] public Ease edge_spawn_ease;
 		[ LabelText( "Edge Movement Speed" ) ] public float edge_movement_speed;
+		[ LabelText( "Edge Reposition Duration" ) ] public float edge_reposition_duration;
+		[ LabelText( "Edge Reposition Ease" ) ] public Ease edge_reposition_ease;
 		[ LabelText( "Edge Merge Count" ) ] public int edge_merge_count = 2;
     
     [ Title( "Camera" ) ]
