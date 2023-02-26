@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SquareShootAllSymmetricColor : ShootBehaviour
+public class ShootAllSymmetricColor : ShootBehaviour
 {
 #region Fields
 #endregion
@@ -22,20 +22,19 @@ public class SquareShootAllSymmetricColor : ShootBehaviour
 		var randomColorSecond = library_edge_color.GetRandomDistinctEdgeColorData();
 
 		library_edge_color.RefreshDistinctColorList();
-
 		EdgeShooter edgeShooter;
+		
+		for( var i = 0; i < shape_data.shape_edge_count; i += 2 )
+		{
+			list_edge_shooter.itemDictionary.TryGetValue( i, out edgeShooter );
+			edgeShooter.Shoot( randomColorFirst );
+		}
 
-		list_edge_shooter.itemDictionary.TryGetValue( 0, out edgeShooter );
-		edgeShooter.Shoot( randomColorFirst );
-
-		list_edge_shooter.itemDictionary.TryGetValue( 1, out edgeShooter );
-		edgeShooter.Shoot( randomColorSecond );
-
-		list_edge_shooter.itemDictionary.TryGetValue( 2, out edgeShooter );
-		edgeShooter.Shoot( randomColorFirst );
-
-		list_edge_shooter.itemDictionary.TryGetValue( 3, out edgeShooter );
-		edgeShooter.Shoot( randomColorSecond );
+		for( var i = 1; i < shape_data.shape_edge_count; i += 2 )
+		{
+			list_edge_shooter.itemDictionary.TryGetValue( i, out edgeShooter );
+			edgeShooter.Shoot( randomColorSecond );
+		}
 	}
 #endregion
 
