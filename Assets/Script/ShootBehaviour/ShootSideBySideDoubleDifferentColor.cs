@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SquareShootSideBySideDoubleSameColor : ShootBehaviour
+public class ShootSideBySideDoubleDifferentColor : ShootBehaviour
 {
 #region Fields
 #endregion
@@ -21,15 +21,17 @@ public class SquareShootSideBySideDoubleSameColor : ShootBehaviour
 		var shooterIndexFirst  = Random.Range( 0, shape_data.shape_edge_count );
 		var shooterIndexSecond = ( shooterIndexFirst + 1 ) % shape_data.shape_edge_count;
 
-		var randomColor  = library_edge_color.GetRandomEdgeColorData();
+		var randomColorFirst  = library_edge_color.GetRandomDistinctEdgeColorData();
+		var randomColorSecond = library_edge_color.GetRandomDistinctEdgeColorData();
+		library_edge_color.RefreshDistinctColorList();
 
 		EdgeShooter edgeShooter;
 
 		list_edge_shooter.itemDictionary.TryGetValue( shooterIndexFirst, out edgeShooter );
-		edgeShooter.Shoot( randomColor );
+		edgeShooter.Shoot( randomColorFirst );
 
 		list_edge_shooter.itemDictionary.TryGetValue( shooterIndexSecond, out edgeShooter );
-		edgeShooter.Shoot( randomColor );
+		edgeShooter.Shoot( randomColorSecond );
 	}
 #endregion
 

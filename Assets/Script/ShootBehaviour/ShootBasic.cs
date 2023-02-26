@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SquareShootBasic : ShootBehaviour
+public class ShootBasic : ShootBehaviour
 {
 #region Fields
 #endregion
