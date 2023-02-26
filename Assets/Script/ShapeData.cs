@@ -14,6 +14,7 @@ public class ShapeData : ScriptableObject
     public float shape_rotation_angle;
     public float shape_rotation_duration;
     public Ease shape_rotation_ease;
+	public int shape_edge_count;
 
   [ Title( "Edge" ) ]
     public float shape_edge_length;
@@ -21,7 +22,7 @@ public class ShapeData : ScriptableObject
     public float shape_edge_spawn_end;
     public float shape_edge_step_size;
     public float shape_edge_step_position;
-    public float shape_edge_count;
+    public int shape_edge_depth_count;
 #endregion
 
 #region Properties

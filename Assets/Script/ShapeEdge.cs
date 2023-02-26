@@ -162,7 +162,7 @@ public class ShapeEdge : MonoBehaviour
 
 	void CheckIfLevelFailed()
 	{
-		if( edge_list.Count > shape_data.shape_edge_count )
+		if( edge_list.Count > shape_data.shape_edge_depth_count )
 			event_level_failed.Raise();
 	}
 #endregion
