@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FFStudio;
+using DG.Tweening;
 using Sirenix.OdinInspector;
 
 public class HexagonShapeShooter : MonoBehaviour
@@ -21,14 +22,18 @@ public class HexagonShapeShooter : MonoBehaviour
 
 	int shoot_id_previous;
 	int shoot_count_previous;
-	UnityMessage onShoot;
-    Cooldown cooldown = new Cooldown();
+	RecycledTween recycledTween = new RecycledTween();
 #endregion
 
 #region Properties
 #endregion
 
 #region Unity API
+	private void OnDisable()
+	{
+		recycledTween.Kill();
+	}
+
     private void Awake()
     {
         shoot_data_list = new List< HexagonShootData >( 100 );
@@ -44,21 +49,19 @@ public class HexagonShapeShooter : MonoBehaviour
 			for( var x = 0; x < shoot_data_array[ i ].shoot_chance; x++ )
 				shoot_data_list.Add( shoot_data_array[ i ] );
         }
-
-		onShoot = Shoot;
 	}
 #endregion
 
 #region API
     public void OnLevelStart()
     {
-		onShoot();
+		Shoot();
 	}
 
     public void OnLevelFailed()
     {
-		onShoot = Extensions.EmptyMethod;
-		cooldown.Kill();
+		FFLogger.Log( "OnLevelFailed" );
+		recycledTween.Kill();
 	}
 #endregion
 
@@ -92,10 +95,11 @@ public class HexagonShapeShooter : MonoBehaviour
 
     void Shoot()
     {
+		FFLogger.Log( "Shoot" );
 		var shootData = DetermineShootMethod();
 		shootData.shoot_behaviour.Shoot();
 
-		cooldown.Start( shoot_interval.ReturnRandom(), Shoot );
+		recycledTween.Recycle( DOVirtual.DelayedCall( shoot_interval.ReturnRandom(), Extensions.EmptyMethod ), Shoot );
 	}
 #endregion
 
