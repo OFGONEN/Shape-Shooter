@@ -71,7 +71,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5808610512951262991, guid: e5e0a4d8148834b8cb814d98a146a52a, type: 3}
       propertyPath: m_Name
-      value: gfx_shape_edge_hexagon
+      value: gfx_shape_edge_hexagon_0
       objectReference: {fileID: 0}
     - target: {fileID: 8154504314278699764, guid: e5e0a4d8148834b8cb814d98a146a52a, type: 3}
       propertyPath: m_RootOrder
