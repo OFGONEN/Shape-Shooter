@@ -72,9 +72,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4893267770693946435, guid: e5e0a4d8148834b8cb814d98a146a52a, type: 3}
   m_PrefabInstance: {fileID: 774749269089997275}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &6441057428121396983 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6026746214237304620, guid: e5e0a4d8148834b8cb814d98a146a52a, type: 3}
+  m_PrefabInstance: {fileID: 774749269089997275}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7568744196120586238 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7190527749684688421, guid: e5e0a4d8148834b8cb814d98a146a52a, type: 3}
+  m_PrefabInstance: {fileID: 774749269089997275}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8737748960137895057 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8323441803522248010, guid: e5e0a4d8148834b8cb814d98a146a52a, type: 3}
   m_PrefabInstance: {fileID: 774749269089997275}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2288769098917050632
@@ -117,9 +127,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5271488954880679320}
     - target: {fileID: 4649814057900082817, guid: 3d427c3d524374d4b9da7f397d7563ad, type: 3}
+      propertyPath: _renderer_array.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649814057900082817, guid: 3d427c3d524374d4b9da7f397d7563ad, type: 3}
       propertyPath: gfx_corner_transform_right
       value: 
       objectReference: {fileID: 7568744196120586238}
+    - target: {fileID: 4649814057900082817, guid: 3d427c3d524374d4b9da7f397d7563ad, type: 3}
+      propertyPath: _renderer_array.Array.data[0]
+      value: 
+      objectReference: {fileID: 434875669849666135}
+    - target: {fileID: 4649814057900082817, guid: 3d427c3d524374d4b9da7f397d7563ad, type: 3}
+      propertyPath: _renderer_array.Array.data[1]
+      value: 
+      objectReference: {fileID: 6441057428121396983}
+    - target: {fileID: 4649814057900082817, guid: 3d427c3d524374d4b9da7f397d7563ad, type: 3}
+      propertyPath: _renderer_array.Array.data[2]
+      value: 
+      objectReference: {fileID: 8737748960137895057}
     - target: {fileID: 5413145216246719471, guid: 3d427c3d524374d4b9da7f397d7563ad, type: 3}
       propertyPath: m_Name
       value: edge_hexagon
