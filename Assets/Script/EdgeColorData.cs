@@ -12,6 +12,7 @@ public class EdgeColorData : ScriptableObject
     public int edge_color_ID;
     public Color edge_color;
     public Material edge_material;
+    public string edge_pfx_alias;
 #endregion
 
 #region Properties

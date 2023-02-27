@@ -15,3 +15,4 @@ MonoBehaviour:
   edge_color_ID: 3
   edge_color: {r: 1, g: 1, b: 0, a: 1}
   edge_material: {fileID: 2100000, guid: 8e595b3e7d2725b4ca0048fd430d6fd8, type: 2}
+  edge_pfx_alias: edge_yellow
