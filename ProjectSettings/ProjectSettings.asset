@@ -157,7 +157,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.ffstudios.template
     Standalone: com.FFStudios.Template
-    iPhone: com.FFStudios.EdgeShooter
+    iPhone: com.FFStudios.ShapeShooter
   buildNumber:
     Standalone: 0
     iPhone: 1
