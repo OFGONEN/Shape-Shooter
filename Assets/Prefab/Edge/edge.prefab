@@ -137,6 +137,7 @@ MonoBehaviour:
   notif_score_current: {fileID: 11400000, guid: 2de5244b543933e45a871decbf04a85a, type: 2}
   notif_score_highest: {fileID: 11400000, guid: 3fc4182f77a5b774fa1402b0a651ee9e, type: 2}
   pool_ui_text_popUp: {fileID: 11400000, guid: eaaacbd90b1464ad2b2a3a962a8a84b2, type: 2}
+  event_vibrate: {fileID: 11400000, guid: a5edacec3496d4c5f9e94958dd3b9adf, type: 2}
   gfx_transform: {fileID: 0}
   gfx_corner_transform_left: {fileID: 0}
   gfx_corner_transform_right: {fileID: 0}

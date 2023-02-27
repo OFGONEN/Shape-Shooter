@@ -18,6 +18,7 @@ public class Edge : MonoBehaviour
 	[ SerializeField ] SharedIntNotifier notif_score_current;
 	[ SerializeField ] SharedIntNotifier notif_score_highest;
 	[ SerializeField ] Pool_UIPopUpText pool_ui_text_popUp;
+	[ SerializeField ] IntGameEvent event_vibrate;
 
   [ Title( "Components" ) ]
     [ SerializeField ] Transform gfx_transform;
@@ -232,6 +233,7 @@ public class Edge : MonoBehaviour
 		SpawnPointText( point );
 
 		event_particle_spawn.Raise( edge_color_data.edge_pfx_alias, transform.position );
+		event_vibrate.Raise( 0 );
 
 		shape_edge.RemoveEdgeAtIndex( shape_edge_index );
 
@@ -239,7 +241,6 @@ public class Edge : MonoBehaviour
 			edge_neighbor_list[ i ].OnMerge();
 
 		ReturnToPool();
-		//todo spawn particle
 	}
 
 	[ Button() ]
