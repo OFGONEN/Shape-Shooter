@@ -27,7 +27,7 @@ MonoBehaviour:
     fadeOut: 0
     ease: 1
   score_text_spawn_radius: 1
-  score_text_spawn_size: 1.25
+  score_text_spawn_size: 1.75
   score_text_spawn_depth: -1
   camera_follow_speed_depth: 2.8
   maxLevelCount: 2
