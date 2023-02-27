@@ -245,9 +245,11 @@ public class Edge : MonoBehaviour
 	[ Button() ]
 	void SpawnPointText( int point )
 	{
-		var textSpawnPoint = ( Random.insideUnitCircle * GameSettings.Instance.score_text_spawn_radius ).ConvertToVector3().SetZ( GameSettings.Instance.score_text_spawn_depth );
+		// var textSpawnPoint = ( Random.insideUnitCircle * GameSettings.Instance.score_text_spawn_radius ).ConvertToVector3().SetZ( GameSettings.Instance.score_text_spawn_depth );
 
-		pool_ui_text_popUp.GetEntity().Spawn( textSpawnPoint, "+" + point, GameSettings.Instance.score_text_spawn_size, edge_color_data.edge_color_text );
+		var textSpawnPoint = transform.position + Random.Range( -shape_data.shape_edge_length / 2f, shape_data.shape_edge_length / 2f ) * transform.right;
+
+		pool_ui_text_popUp.GetEntity().Spawn( textSpawnPoint.SetZ( GameSettings.Instance.score_text_spawn_depth ), "+" + point, GameSettings.Instance.score_text_spawn_size, edge_color_data.edge_color_text );
 	}
 
     void UpdateVisual()
