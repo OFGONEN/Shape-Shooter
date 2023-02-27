@@ -14,6 +14,7 @@ namespace FFStudio
 
         [ Header( "Level Releated" ) ]
         public SharedProgressNotifier notifier_progress;
+        public SharedIntNotifier notif_score_current;
 #endregion
 
 #region UnityAPI
@@ -23,7 +24,8 @@ namespace FFStudio
         // Info: Called from Editor.
         public void LevelLoadedResponse()
         {
-			notifier_progress.SharedValue = 0;
+			notifier_progress.SharedValue   = 0;
+			notif_score_current.SharedValue = 0;
 
 			var levelData = CurrentLevelData.Instance.levelData;
             // Set Active Scene.
