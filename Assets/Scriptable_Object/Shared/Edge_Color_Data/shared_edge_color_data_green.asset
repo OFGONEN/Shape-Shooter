@@ -16,3 +16,4 @@ MonoBehaviour:
   edge_color: {r: 0, g: 1, b: 0, a: 1}
   edge_material: {fileID: 2100000, guid: 6be8c3a44675c3c4bbe58d2df5e4d393, type: 2}
   edge_pfx_alias: edge_green
+  edge_color_text: {r: 0.29803923, g: 0.85882354, b: 0, a: 1}
