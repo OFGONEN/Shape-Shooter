@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   edge_color_ID: 0
   edge_color: {r: 0, g: 1, b: 0, a: 1}
+  edge_material: {fileID: 2100000, guid: 6be8c3a44675c3c4bbe58d2df5e4d393, type: 2}
