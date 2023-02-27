@@ -15,6 +15,8 @@ public class Edge : MonoBehaviour
 	[ SerializeField ] GameEvent event_shape_merged;
 	[ SerializeField ] ShapeData shape_data;
 	[ SerializeField ] ParticleSpawnEvent event_particle_spawn;
+	[ SerializeField ] SharedIntNotifier notif_score_current;
+	[ SerializeField ] SharedIntNotifier notif_score_highest;
 
   [ Title( "Components" ) ]
     [ SerializeField ] Transform gfx_transform;
