@@ -984,6 +984,78 @@ PrefabInstance:
       propertyPath: m_Name
       value: shooter_hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 6073341686735572104, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
+      propertyPath: shoot_data_array.Array.data[3].shoot_count
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073341686735572104, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
+      propertyPath: shoot_data_array.Array.data[4].shoot_count
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073341686735572104, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
+      propertyPath: shoot_data_array.Array.data[5].shoot_count
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073341686735572104, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
+      propertyPath: shoot_data_array.Array.data[0].shoot_chance
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073341686735572104, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
+      propertyPath: shoot_data_array.Array.data[1].shoot_chance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073341686735572104, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
+      propertyPath: shoot_data_array.Array.data[2].shoot_chance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073341686735572104, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
+      propertyPath: shoot_data_array.Array.data[3].shoot_chance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073341686735572104, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
+      propertyPath: shoot_data_array.Array.data[4].shoot_chance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073341686735572104, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
+      propertyPath: shoot_data_array.Array.data[5].shoot_chance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073341686735572104, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
+      propertyPath: shoot_data_array.Array.data[6].shoot_chance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073341686735572104, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
+      propertyPath: shoot_data_array.Array.data[7].shoot_chance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073341686735572104, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
+      propertyPath: shoot_data_array.Array.data[8].shoot_chance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073341686735572104, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
+      propertyPath: shoot_data_array.Array.data[9].shoot_chance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073341686735572104, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
+      propertyPath: shoot_data_array.Array.data[10].shoot_chance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073341686735572104, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
+      propertyPath: shoot_data_array.Array.data[11].shoot_chance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073341686735572104, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
+      propertyPath: shoot_data_array.Array.data[3].shoot_behaviour
+      value: 1591611869818781869
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073341686735572104, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
+      propertyPath: shoot_data_array.Array.data[4].shoot_behaviour
+      value: 1591611869818781871
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073341686735572104, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
+      propertyPath: shoot_data_array.Array.data[5].shoot_behaviour
+      value: 1591611869818781872
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89cc4db69ef46a34a851168046be0f6a, type: 3}
 --- !u!1 &1743656206
