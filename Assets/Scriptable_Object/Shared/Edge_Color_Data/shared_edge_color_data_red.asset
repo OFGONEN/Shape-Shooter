@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db5d203b1a09cd24ab78f4a81354c09a, type: 3}
   m_Name: shared_edge_color_data_red
   m_EditorClassIdentifier: 
-  edge_color_ID: 1
+  edge_color_ID: 2
   edge_color: {r: 1, g: 0, b: 0, a: 1}
   edge_material: {fileID: 2100000, guid: e221b3fd03a62644ba09353c61fa2553, type: 2}
