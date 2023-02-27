@@ -87,8 +87,8 @@ MonoBehaviour:
   - rid: 1591611869818781737
   - rid: 1591611869818781736
   - rid: 1591611869818781735
-  - rid: 1591611869818781740
-  - rid: 1591611869818781741
+  - rid: 1591611869818781862
+  - rid: 1591611869818781863
   - rid: 1591611869818781742
   - rid: 1591611869818781743
   - rid: 1591611869818781747
@@ -194,10 +194,6 @@ MonoBehaviour:
       type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
     - rid: 1591611869818781739
       type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
-    - rid: 1591611869818781740
-      type: {class: ShootSymmetricDouble, ns: , asm: Assembly-CSharp}
-    - rid: 1591611869818781741
-      type: {class: ShootSymmetricDouble, ns: , asm: Assembly-CSharp}
     - rid: 1591611869818781742
       type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
     - rid: 1591611869818781743
@@ -226,6 +222,10 @@ MonoBehaviour:
       type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
     - rid: 1591611869818781755
       type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781862
+      type: {class: ShootAllSymmetricColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781863
+      type: {class: ShootAllSymmetricColor, ns: , asm: Assembly-CSharp}
 --- !u!1 &4987450750465661991
 GameObject:
   m_ObjectHideFlags: 0
