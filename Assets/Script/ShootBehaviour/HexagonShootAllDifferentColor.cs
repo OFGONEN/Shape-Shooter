@@ -39,6 +39,8 @@ public class HexagonShootAllDifferentColor : ShootBehaviour
 
 		list_edge_shooter.itemDictionary.TryGetValue( 5, out edgeShooter );
 		edgeShooter.Shoot( library_edge_color.GetRandomDistinctEdgeColorData() );
+
+		library_edge_color.RefreshDistinctColorList();
 	}
 #endregion
 
