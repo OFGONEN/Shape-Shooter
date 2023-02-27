@@ -41,7 +41,7 @@ public class Edge : MonoBehaviour
 #endregion
 
 #region API
-    public void Shoot( EdgeColorData data, Transform start, Transform end, float sizeStart, float sizeEnd )
+    public void Shoot( EdgeColorData data, Transform start, Transform end, float sizeStart )
     {
 		edge_neighbor_list.Clear();
 		onMerge = Merge;
@@ -55,7 +55,8 @@ public class Edge : MonoBehaviour
 		transform.position = start.position;
 		transform.rotation = start.rotation;
 
-		var duration = Vector3.Distance( end.position, start.position ) / GameSettings.Instance.edge_movement_speed;
+		var distance = Vector3.Distance( end.position, start.position );
+		var duration = distance / GameSettings.Instance.edge_movement_speed;
 
 		gfx_transform.localScale = Vector3.one.SetX( sizeStart );
 		OnGFXScaleUpdate();
@@ -65,7 +66,7 @@ public class Edge : MonoBehaviour
 		var sequence = recycledSequence.Recycle();
 
 		sequence.Append(
-			gfx_transform.DOScaleX( sizeEnd,
+			gfx_transform.DOScaleX( 1 + (  distance / shape_data.shape_edge_step_position ) * shape_data.shape_edge_step_size,
 				GameSettings.Instance.edge_spawn_duration )
 				.SetEase( GameSettings.Instance.edge_spawn_ease )
 				.OnUpdate( OnGFXScaleUpdate )
