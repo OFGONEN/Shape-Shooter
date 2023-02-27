@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d276ba32ab49cdc48bfd3a89004c268b, type: 3}
   m_Name: pool_edge_hexagon
   m_EditorClassIdentifier: 
-  stackSize: 16
+  stackSize: 32
   pool_entity: {fileID: 6864649534192484233, guid: e50d93f25d2d2df43a962aa244194b19, type: 3}
