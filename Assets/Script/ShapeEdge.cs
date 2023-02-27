@@ -101,9 +101,9 @@ public class ShapeEdge : MonoBehaviour
 		edge.OnShapeTriggerIdle();
 
 		edge_list.Add( edge );
-		StationEdge( edge );
 
-		CheckIfLevelFailed();
+		if( !CheckIfLevelFailed() )
+			StationEdge( edge );
 	}
 
     void TriggerDynamic( Collider collider )
@@ -137,12 +137,17 @@ public class ShapeEdge : MonoBehaviour
 		for( var i = 0; i < edge_list_temp.Count; i++ )
 		{
 			var edge = edge_list_temp[ i ];
-
 			edge_list.Add( edge );
-			StationEdge( edge );
 		}
 
-		CheckIfLevelFailed();
+		if( !CheckIfLevelFailed() )
+		{
+			for( var i = 0; i < edge_list_temp.Count; i++ )
+			{
+				var edge = edge_list_temp[ i ];
+				StationEdge( edge );
+			}
+		}
 
 		edge_list_temp.Clear();
 	}
@@ -161,10 +166,15 @@ public class ShapeEdge : MonoBehaviour
 			return -1;
 	}
 
-	void CheckIfLevelFailed()
+	bool CheckIfLevelFailed()
 	{
 		if( edge_list.Count > shape_data.shape_edge_depth_count )
+		{
 			event_level_failed.Raise();
+			return true;
+		}
+
+		return false;
 	}
 #endregion
 
