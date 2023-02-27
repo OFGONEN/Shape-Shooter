@@ -22,6 +22,7 @@ namespace FFStudio
     [ Title( "Score" ) ]
 		[ LabelText( "Current Score Shake Position" ) ] public ShakePositionTween score_current_shakePosition;
 		[ LabelText( "Score Text Spawn Radius" ) ] public float score_text_spawn_radius;
+		[ LabelText( "Score Text Spawn Size" ) ] public float score_text_spawn_size;
 		[ LabelText( "Score Text Spawn Depth" ) ] public float score_text_spawn_depth;
     
     [ Title( "Camera" ) ]
