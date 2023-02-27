@@ -31,6 +31,7 @@ public class Edge : MonoBehaviour
 	[ ShowInInspector, ReadOnly ] List< Edge > edge_neighbor_list = new List< Edge >();
 
 	UnityMessage onMerge;
+	Cooldown cooldown = new Cooldown();
 #endregion
 
 #region Properties
@@ -104,7 +105,7 @@ public class Edge : MonoBehaviour
 	{
 		shape_edge_index = edgeIndex;
 
-		var sequence = recycledSequence.Recycle();
+		var sequence = recycledSequence.Recycle( OnRepositionComplete );
 
 		sequence.Append( transform.DOLocalMove(
 			localPosition,
@@ -131,38 +132,13 @@ public class Edge : MonoBehaviour
 		gfx_transform.localScale = size;
 		OnGFXScaleUpdate();
 
-		var edgeDown  = shape_edge.GetEdgeAtIndex( edgeIndex - 1 );
-		var edgeRight = shape_edge.ShapeEdgeNeighborRight.GetEdgeAtIndex( edgeIndex );
-		var edgeLeft  = shape_edge.ShapeEdgeNeighborLeft.GetEdgeAtIndex( edgeIndex );
-
-		if( edgeDown != null && edgeDown.ColorID == ColorID )
-		{
-			edge_neighbor_list.Add( edgeDown );
-			edgeDown.AddAnotherEdgeAsNeighbor( this );
-		}
-		if( edgeRight != null && edgeRight.ColorID == ColorID )
-		{
-			edge_neighbor_list.Add( edgeRight );
-			edgeRight.AddAnotherEdgeAsNeighbor( this );
-		}
-		if( edgeLeft != null && edgeLeft.ColorID == ColorID )
-		{
-			edge_neighbor_list.Add( edgeLeft );
-			edgeLeft.AddAnotherEdgeAsNeighbor( this );
-		}
-
-		var merge = CheckIfMerge();
-
-		if( merge || ( edgeDown != null && edgeDown.CheckIfMerge() ) || ( edgeRight != null && edgeRight.CheckIfMerge() ) || ( edgeLeft != null && edgeLeft.CheckIfMerge() ) )
-		{
-			OnMerge();
-			event_shape_merged.Raise();
-		}
+		cooldown.Start( Time.fixedDeltaTime, CacheNeighborsAndCheckIfMerge );
 	}
 
 	public void AddAnotherEdgeAsNeighbor( Edge edge )
 	{
-		edge_neighbor_list.Add( edge );
+		if( !edge_neighbor_list.Contains( edge) )
+			edge_neighbor_list.Add( edge );
 	}
 
 	public void OnLevelComplete()
@@ -188,6 +164,43 @@ public class Edge : MonoBehaviour
 #endregion
 
 #region Implementation
+	void OnRepositionComplete()
+	{
+		edge_neighbor_list.Clear();
+		CacheNeighborsAndCheckIfMerge();
+	}
+
+	void CacheNeighborsAndCheckIfMerge()
+	{
+		var edgeDown  = shape_edge.GetEdgeAtIndex( shape_edge_index - 1 );
+		var edgeRight = shape_edge.ShapeEdgeNeighborRight.GetEdgeAtIndex( shape_edge_index );
+		var edgeLeft  = shape_edge.ShapeEdgeNeighborLeft.GetEdgeAtIndex( shape_edge_index );
+
+		if( edgeDown != null && edgeDown.ColorID == ColorID )
+		{
+			AddAnotherEdgeAsNeighbor( edgeDown );
+			edgeDown.AddAnotherEdgeAsNeighbor( this );
+		}
+		if( edgeRight != null && edgeRight.ColorID == ColorID )
+		{
+			AddAnotherEdgeAsNeighbor( edgeRight );
+			edgeRight.AddAnotherEdgeAsNeighbor( this );
+		}
+		if( edgeLeft != null && edgeLeft.ColorID == ColorID )
+		{
+			AddAnotherEdgeAsNeighbor( edgeLeft );
+			edgeLeft.AddAnotherEdgeAsNeighbor( this );
+		}
+
+		var merge = CheckIfMerge();
+
+		if( merge || ( edgeDown != null && edgeDown.CheckIfMerge() ) || ( edgeRight != null && edgeRight.CheckIfMerge() ) || ( edgeLeft != null && edgeLeft.CheckIfMerge() ) )
+		{
+			OnMerge();
+			event_shape_merged.Raise();
+		}
+	}
+
 	void OnGFXScaleUpdate()
 	{
 		var scaleX                                   = gfx_transform.localScale.x;
@@ -205,6 +218,7 @@ public class Edge : MonoBehaviour
 	void Merge()
 	{
 		onMerge = Extensions.EmptyMethod;
+		cooldown.Kill();
 
 		shape_edge.RemoveEdgeAtIndex( shape_edge_index );
 
