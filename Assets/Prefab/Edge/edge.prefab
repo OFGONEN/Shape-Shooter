@@ -133,6 +133,7 @@ MonoBehaviour:
   pool_edge: {fileID: 0}
   event_shape_merged: {fileID: 11400000, guid: e57847f844c616541bd1334197ef1165, type: 2}
   shape_data: {fileID: 0}
+  event_particle_spawn: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
   gfx_transform: {fileID: 0}
   gfx_corner_transform_left: {fileID: 0}
   gfx_corner_transform_right: {fileID: 0}

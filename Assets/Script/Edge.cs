@@ -14,6 +14,7 @@ public class Edge : MonoBehaviour
 	[ SerializeField ] PoolEdge pool_edge;
 	[ SerializeField ] GameEvent event_shape_merged;
 	[ SerializeField ] ShapeData shape_data;
+	[ SerializeField ] ParticleSpawnEvent event_particle_spawn;
 
   [ Title( "Components" ) ]
     [ SerializeField ] Transform gfx_transform;
@@ -219,6 +220,8 @@ public class Edge : MonoBehaviour
 	{
 		onMerge = Extensions.EmptyMethod;
 		cooldown.Kill();
+
+		event_particle_spawn.Raise( edge_color_data.edge_pfx_alias, transform.position );
 
 		shape_edge.RemoveEdgeAtIndex( shape_edge_index );
 
