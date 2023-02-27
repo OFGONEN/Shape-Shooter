@@ -9,9 +9,15 @@ using Sirenix.OdinInspector;
 public class HexagonShapeShooter : MonoBehaviour
 {
 #region Fields
+  [ Title( "Setup" ) ]
     [ SerializeField ] HexagonShootData[] shoot_data_array;
     [ SerializeField ] Vector2 shoot_interval;
     [ ShowInInspector, ReadOnly ] List< HexagonShootData > shoot_data_list;
+
+  [ Title( "Shared" ) ]
+	[ SerializeField ] ShapeData shape_data;
+	[ SerializeField ] ListEdgeShooter list_edge_shooter;
+	[ SerializeField ] ColorLibrary library_color;
 
 	int shoot_id_previous;
 	int shoot_count_previous;
@@ -33,6 +39,7 @@ public class HexagonShapeShooter : MonoBehaviour
 		for( var i = 0; i < shoot_data_array.Length; i++ )
         {
 			shoot_data_array[ i ].shoot_id = i;
+			shoot_data_array[ i ].shoot_behaviour.Init( shape_data, list_edge_shooter, library_color );
 
 			for( var x = 0; x < shoot_data_array[ i ].shoot_chance; x++ )
 				shoot_data_list.Add( shoot_data_array[ i ] );
