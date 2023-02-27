@@ -18,6 +18,7 @@ MonoBehaviour:
   edge_reposition_duration: 0.1
   edge_reposition_ease: 12
   edge_merge_count: 2
+  edge_point_range: {x: 1, y: 3}
   score_current_shakePosition:
     strength: {x: 0.25, y: 0.25, z: 0}
     duration: 0.1

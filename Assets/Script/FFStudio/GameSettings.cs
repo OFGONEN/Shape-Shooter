@@ -17,6 +17,7 @@ namespace FFStudio
 		[ LabelText( "Edge Reposition Duration" ) ] public float edge_reposition_duration;
 		[ LabelText( "Edge Reposition Ease" ) ] public Ease edge_reposition_ease;
 		[ LabelText( "Edge Merge Count" ) ] public int edge_merge_count = 2;
+		[ LabelText( "Edge Point Range" ) ] public Vector2 edge_point_range;
 
     [ Title( "Score" ) ]
 		[ LabelText( "Current Score Shake Position" ) ] public ShakePositionTween score_current_shakePosition;
