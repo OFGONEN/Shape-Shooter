@@ -47,14 +47,15 @@ public class ShapeEdge : MonoBehaviour
 
     public void OnTurnStart()
     {
-		onTrigger = TriggerDynamic;
+		// onTrigger = TriggerDynamic;
+		_boxCollider.enabled = false;
 	}
 
     public void OnTurnStop()
     {
-		onTrigger = TriggerIdle;
+		// onTrigger = TriggerIdle;
 
-		cooldown.Start( Time.fixedDeltaTime, CollectTriggeredEdges );
+		cooldown.Start( Time.fixedDeltaTime, () => _boxCollider.enabled = true );
 		// CollectTriggeredEdges();
 	}
 
