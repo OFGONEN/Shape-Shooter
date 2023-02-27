@@ -91,7 +91,7 @@ public class ShapeEdge : MonoBehaviour
 		for( var i = 0; i < edge_list.Count; i++ )
 			RepositionEdge( edge_list[ i ], i );
 
-		_boxCollider.transform.localScale = Vector3.one.SetZ( ( edge_list.Count + 1 ) * shape_data.shape_edge_step_size );
+		_boxCollider.transform.localScale = Vector3.one.SetZ( ( edge_list.Count + 1 ) * shape_data.shape_edge_step_position );
 	}
 
     void TriggerIdle( Collider collider )
@@ -119,7 +119,7 @@ public class ShapeEdge : MonoBehaviour
 
 		edge.StationOnShape( this, edgeIndex, ( edgeIndex + 2 ) * shape_data.shape_edge_step_position * Vector3.forward, Vector3.one.OffsetX( ( edgeIndex + 1 ) * shape_data.shape_edge_step_size ) );
 
-		_boxCollider.transform.localScale = Vector3.one.SetZ( ( edge_list.Count + 1 ) * shape_data.shape_edge_step_size );
+		_boxCollider.transform.localScale = Vector3.one.SetZ( ( edge_list.Count + 1 ) * shape_data.shape_edge_step_position );
 	}
 
 	void RepositionEdge( Edge edge, int index )
