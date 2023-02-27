@@ -19,7 +19,7 @@ public class Edge : MonoBehaviour
     [ SerializeField ] Transform gfx_transform;
     [ SerializeField ] Transform gfx_corner_transform_left;
     [ SerializeField ] Transform gfx_corner_transform_right;
-    [ SerializeField ] ColorSetter _colorSetter;
+    [ SerializeField ] Renderer[] _renderer_array;
     [ SerializeField ] Rigidbody _rigidbody;
     [ SerializeField ] Collider _collider;
     
@@ -216,7 +216,8 @@ public class Edge : MonoBehaviour
 
     void UpdateVisual()
     {
-		_colorSetter.SetColor( edge_color_data.edge_color );
+		for( var i = 0; i < _renderer_array.Length; i++ )
+			_renderer_array[ i ].sharedMaterial = edge_color_data.edge_material;
 	}
 #endregion
 
