@@ -44,8 +44,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a388f5bf7892be45b02339c731acaab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shoot_data_array: []
+  shoot_data_array:
+  - shoot_behaviour:
+      rid: 1591611869818781864
+    shoot_id: 0
+    shoot_chance: 15
+    shoot_count: 5
+  - shoot_behaviour:
+      rid: 1591611869818781865
+    shoot_id: 0
+    shoot_chance: 12
+    shoot_count: 4
+  - shoot_behaviour:
+      rid: 1591611869818781866
+    shoot_id: 0
+    shoot_chance: 12
+    shoot_count: 4
+  - shoot_behaviour:
+      rid: 1591611869818781871
+    shoot_id: 0
+    shoot_chance: 11
+    shoot_count: 2
+  - shoot_behaviour:
+      rid: 1591611869818781872
+    shoot_id: 0
+    shoot_chance: 11
+    shoot_count: 2
+  - shoot_behaviour:
+      rid: 1591611869818781869
+    shoot_id: 0
+    shoot_chance: 9
+    shoot_count: 4
+  - shoot_behaviour:
+      rid: 1591611869818781870
+    shoot_id: 0
+    shoot_chance: 7
+    shoot_count: 2
+  - shoot_behaviour:
+      rid: 1591611869818781873
+    shoot_id: 0
+    shoot_chance: 0
+    shoot_count: 0
+  - shoot_behaviour:
+      rid: 1591611869818781874
+    shoot_id: 0
+    shoot_chance: 5
+    shoot_count: 2
+  - shoot_behaviour:
+      rid: 1591611869818781875
+    shoot_id: 0
+    shoot_chance: 5
+    shoot_count: 2
+  - shoot_behaviour:
+      rid: 1591611869818781878
+    shoot_id: 0
+    shoot_chance: 3
+    shoot_count: 2
+  - shoot_behaviour:
+      rid: 1591611869818781877
+    shoot_id: 0
+    shoot_chance: 3
+    shoot_count: 2
   shoot_interval: {x: 2, y: 3}
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1591611869818781864
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781865
+      type: {class: ShootSideBySideDoubleSameColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781866
+      type: {class: ShootSideBySideDoubleDifferentColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781869
+      type: {class: ShootSymmetricDouble, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781870
+      type: {class: HexagonShootSymmetricTripleSameColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781871
+      type: {class: HexagonShootSideBySideTripleSameColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781872
+      type: {class: HexagonShootSideBySideTripleDifferentColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781873
+      type: {class: HexagonShootSymmetricTripleDifferentColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781874
+      type: {class: ShootAllSameColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781875
+      type: {class: HexagonShootAllThreeColoredSymmetric, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781877
+      type: {class: HexagonShootAllDifferentColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781878
+      type: {class: ShootAllSymmetricColor, ns: , asm: Assembly-CSharp}
