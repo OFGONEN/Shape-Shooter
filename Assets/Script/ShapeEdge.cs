@@ -126,7 +126,7 @@ public class ShapeEdge : MonoBehaviour
 	{
 		edge.RepositionOnShape( index,
 			( index + 2 ) * shape_data.shape_edge_step_position * Vector3.forward,
-			Vector3.one.OffsetX( index * shape_data.shape_edge_step_size ) );
+			Vector3.one.OffsetX( ( index + 1 ) * shape_data.shape_edge_step_size ) );
 	}
 
 	void CollectTriggeredEdges()
