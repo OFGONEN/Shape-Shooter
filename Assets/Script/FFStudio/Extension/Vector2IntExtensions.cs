@@ -13,5 +13,10 @@ namespace FFStudio
 			else
 				return v2.x + v2.y * v2.y;
 		}
+
+		public static int ReturnRandom( this Vector2Int v2 )
+		{
+			return Random.Range( v2.x, v2.y );
+		}
 	}
 }
