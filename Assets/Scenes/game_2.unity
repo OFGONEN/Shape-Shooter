@@ -218,14 +218,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 240087698320341000, guid: 59d9cf6434b89da46846a2055f0dcb05, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 240087698320341001, guid: 59d9cf6434b89da46846a2055f0dcb05, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 240087698320341003, guid: 59d9cf6434b89da46846a2055f0dcb05, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -439,8 +431,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 665
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a2a0eac20462392448130bfd1e995e86, type: 2}
-  m_sharedMaterial: {fileID: -279046927834550113, guid: a2a0eac20462392448130bfd1e995e86, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cedfc0b70fa26a54ba2f0de45361a19f, type: 2}
+  m_sharedMaterial: {fileID: 5984396576242117401, guid: cedfc0b70fa26a54ba2f0de45361a19f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -464,8 +456,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 54
+  m_fontSizeBase: 54
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -526,7 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b0963315ddbad4aa84a527e08fce12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedDataNotifier: {fileID: 0}
+  sharedDataNotifier: {fileID: 11400000, guid: 3fc4182f77a5b774fa1402b0a651ee9e, type: 2}
 --- !u!1 &1055214300
 GameObject:
   m_ObjectHideFlags: 0
