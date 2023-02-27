@@ -223,6 +223,11 @@ public class Edge : MonoBehaviour
 		onMerge = Extensions.EmptyMethod;
 		cooldown.Kill();
 
+		var point = GameSettings.Instance.edge_point_range.ReturnRandom();
+
+		notif_score_current.SharedValue += point;
+		notif_score_highest.SharedValue += point;
+
 		event_particle_spawn.Raise( edge_color_data.edge_pfx_alias, transform.position );
 
 		shape_edge.RemoveEdgeAtIndex( shape_edge_index );
