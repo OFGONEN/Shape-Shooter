@@ -43,7 +43,7 @@ public class EdgeShooter : MonoBehaviour
     {
 		var edge = pool_edge.GetEntity();
 
-		edge.Shoot( data, shoot_transform_start, shoot_transform_end, shape_data.shape_edge_spawn_start, shape_data.shape_edge_spawn_end );
+		edge.Shoot( data, shoot_transform_start, shoot_transform_end, shape_data.shape_edge_spawn_start );
 	}
 #endregion
 

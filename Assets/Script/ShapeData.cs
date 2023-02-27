@@ -19,7 +19,6 @@ public class ShapeData : ScriptableObject
   [ Title( "Edge" ) ]
     public float shape_edge_length;
     public float shape_edge_spawn_start;
-    public float shape_edge_spawn_end;
     public float shape_edge_step_size;
     public float shape_edge_step_position;
     public int shape_edge_depth_count;
