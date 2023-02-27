@@ -18,6 +18,13 @@ MonoBehaviour:
   edge_reposition_duration: 0.1
   edge_reposition_ease: 12
   edge_merge_count: 2
+  score_current_shakePosition:
+    strength: {x: 0.25, y: 0.25, z: 0}
+    duration: 0.1
+    vibrato: 10
+    randomness: 90
+    fadeOut: 0
+    ease: 1
   camera_follow_speed_depth: 2.8
   maxLevelCount: 2
   useRemoteConfig_GameSettings: 0

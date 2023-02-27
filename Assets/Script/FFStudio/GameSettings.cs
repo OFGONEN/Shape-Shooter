@@ -17,6 +17,9 @@ namespace FFStudio
 		[ LabelText( "Edge Reposition Duration" ) ] public float edge_reposition_duration;
 		[ LabelText( "Edge Reposition Ease" ) ] public Ease edge_reposition_ease;
 		[ LabelText( "Edge Merge Count" ) ] public int edge_merge_count = 2;
+
+    [ Title( "Score" ) ]
+		[ LabelText( "Current Score Shake Position" ) ] public ShakePositionTween score_current_shakePosition;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
