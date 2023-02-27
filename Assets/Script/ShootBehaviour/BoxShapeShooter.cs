@@ -14,6 +14,7 @@ public class BoxShapeShooter : MonoBehaviour
     [ SerializeReference ] List< ShootBehaviour > shoot_behaviour_list;
     [ SerializeField ] float shoot_interval      = 2f;
     [ SerializeField ] float shoot_interval_last = 4;
+    [ SerializeField ] SharedFloatNotifier notif_level_progress;
 
   [ Title( "Shared" ) ]
 	[ SerializeField ] ShapeData shape_data;
@@ -42,7 +43,9 @@ public class BoxShapeShooter : MonoBehaviour
 
         for( var i = 0; i < shoot_behaviour_list.Count; i++ )
         {
+			var progress = Mathf.InverseLerp( 0, shoot_behaviour_list.Count - 1, i );
 			sequence.AppendCallback( shoot_behaviour_list[ i ].Shoot );
+			sequence.AppendCallback( () => notif_level_progress.SharedValue = progress );
 			sequence.AppendInterval( shoot_interval );
 		}
 
