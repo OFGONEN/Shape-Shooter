@@ -18,7 +18,6 @@ MonoBehaviour:
   shape_edge_count: 4
   shape_edge_length: 1.36
   shape_edge_spawn_start: 0.5
-  shape_edge_spawn_end: 2
   shape_edge_step_size: 0.1765
   shape_edge_step_position: 0.12
   shape_edge_depth_count: 5
