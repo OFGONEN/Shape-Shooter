@@ -26,6 +26,8 @@ MonoBehaviour:
     randomness: 90
     fadeOut: 0
     ease: 1
+  score_text_spawn_radius: 0.5
+  score_text_spawn_depth: -1
   camera_follow_speed_depth: 2.8
   maxLevelCount: 2
   useRemoteConfig_GameSettings: 0
@@ -35,8 +37,8 @@ MonoBehaviour:
   ui_Entity_Scale_TweenDuration: 0.5
   ui_Entity_FloatingMove_TweenDuration: 0.5
   ui_Entity_JoyStick_Gap: 50
-  ui_PopUp_height: 1
-  ui_PopUp_duration: 0.75
+  ui_PopUp_height: 1.2
+  ui_PopUp_duration: 1.5
   ui_particle_spawn_width: 10
   ui_particle_spawn_duration: 0.1
   ui_particle_spawn_ease: 1

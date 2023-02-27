@@ -21,6 +21,8 @@ namespace FFStudio
 
     [ Title( "Score" ) ]
 		[ LabelText( "Current Score Shake Position" ) ] public ShakePositionTween score_current_shakePosition;
+		[ LabelText( "Score Text Spawn Radius" ) ] public float score_text_spawn_radius;
+		[ LabelText( "Score Text Spawn Depth" ) ] public float score_text_spawn_depth;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
