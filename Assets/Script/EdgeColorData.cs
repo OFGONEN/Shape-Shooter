@@ -11,6 +11,7 @@ public class EdgeColorData : ScriptableObject
 #region Fields
     public int edge_color_ID;
     public Color edge_color;
+    public Material edge_material;
 #endregion
 
 #region Properties
