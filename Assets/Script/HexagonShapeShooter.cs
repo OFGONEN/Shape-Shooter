@@ -95,7 +95,6 @@ public class HexagonShapeShooter : MonoBehaviour
 
     void Shoot()
     {
-		FFLogger.Log( "Shoot" );
 		var shootData = DetermineShootMethod();
 		shootData.shoot_behaviour.Shoot();
 
