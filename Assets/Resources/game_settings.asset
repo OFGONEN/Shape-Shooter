@@ -19,7 +19,7 @@ MonoBehaviour:
   edge_reposition_ease: 12
   edge_merge_count: 2
   camera_follow_speed_depth: 2.8
-  maxLevelCount: 1
+  maxLevelCount: 2
   useRemoteConfig_GameSettings: 0
   useRemoteConfig_Components: 0
   ui_Entity_Move_TweenDuration: 0.5
