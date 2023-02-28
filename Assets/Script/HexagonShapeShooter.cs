@@ -72,7 +72,7 @@ public class HexagonShapeShooter : MonoBehaviour
 
         if( shootData.shoot_id == shoot_id_previous )
         {
-            if( shootData.shoot_count >= shoot_count_previous )
+            if( shoot_count_previous >= shootData.shoot_count )
             {
 			    do
 			    {
