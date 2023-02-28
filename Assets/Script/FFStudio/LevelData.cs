@@ -15,6 +15,10 @@ namespace FFStudio
 		[ ValueDropdown( "SceneList" ), LabelText( "Scene Index" ) ] public int scene_index;
         [ LabelText( "Override As Active Scene" ) ] public bool scene_overrideAsActiveScene;
 
+	[ Title( "Edge Settings" ) ]
+		[ LabelText( "Edge Movement Speed" ) ] public float edge_movement_speed;
+
+
 #if UNITY_EDITOR
 		static IEnumerable SceneList()
         {

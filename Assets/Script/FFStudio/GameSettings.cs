@@ -13,7 +13,6 @@ namespace FFStudio
     [ Title( "Edge" ) ]
 		[ LabelText( "Edge Spawn Duration" ) ] public float edge_spawn_duration;
 		[ LabelText( "Edge Spawn Ease" ) ] public Ease edge_spawn_ease;
-		[ LabelText( "Edge Movement Speed" ) ] public float edge_movement_speed;
 		[ LabelText( "Edge Reposition Duration" ) ] public float edge_reposition_duration;
 		[ LabelText( "Edge Reposition Ease" ) ] public Ease edge_reposition_ease;
 		[ LabelText( "Edge Merge Count" ) ] public int edge_merge_count = 2;
@@ -24,7 +23,7 @@ namespace FFStudio
 		[ LabelText( "Score Text Spawn Radius" ) ] public float score_text_spawn_radius;
 		[ LabelText( "Score Text Spawn Size" ) ] public float score_text_spawn_size;
 		[ LabelText( "Score Text Spawn Depth" ) ] public float score_text_spawn_depth;
-    
+
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
     

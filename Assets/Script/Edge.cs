@@ -62,7 +62,7 @@ public class Edge : MonoBehaviour
 		transform.rotation = start.rotation;
 
 		var distance = Vector3.Distance( end.position, start.position );
-		var duration = distance / GameSettings.Instance.edge_movement_speed;
+		var duration = distance / CurrentLevelData.Instance.levelData.edge_movement_speed;
 
 		gfx_transform.localScale = Vector3.one.SetX( sizeStart );
 		OnGFXScaleUpdate();
