@@ -110,6 +110,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: c65ae44df0584f24e987a74084903f14, type: 2}
+          m_TargetAssemblyTypeName: FFStudio.Logger_SOBased, Assembly-CSharp
+          m_MethodName: Log
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Level Start
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventListener:
       gameEvents:
       - {fileID: 11400000, guid: efef06bf257ee27438d6c2aab4936226, type: 2}
