@@ -148,6 +148,11 @@ namespace FFStudio
 			/* Intentionally empty, by definition. */
 		}
 
+		public static void EmptyMethod( Collider collider )
+		{
+			/* Intentionally empty, by definition. */
+		}
+
 		public static TransformData GetTransformData( this Transform transform )
 		{
 			TransformData data;
@@ -293,6 +298,11 @@ namespace FFStudio
 		public static T ReturnRandom< T >( this T[] array )
 		{
 			return array[ Random.Range( 0, array.Length ) ];
+		}
+
+		public static T ReturnRandom< T >( this List< T > list )
+		{
+			return list[ Random.Range( 0, list.Count ) ];
 		}
 
 		public static void DestroyAllChildren( this Transform transform )

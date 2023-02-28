@@ -9,11 +9,12 @@ namespace FFStudio
 	public class ColorSetter : MonoBehaviour
 	{
 #region Fields
-		[ TitleGroup( "Setup" ), SerializeField ] Color color;
+	  [ Title( "Setup" ) ]
+		[ SerializeField ] Color color;
+		[ SerializeField ] Renderer theRenderer;
 
 		static int SHADER_ID_COLOR = Shader.PropertyToID( "_BaseColor" );
 
-		Renderer theRenderer;
 		MaterialPropertyBlock propertyBlock;
 #endregion
 
@@ -23,8 +24,6 @@ namespace FFStudio
 #region Unity API
 		void Awake()
 		{
-			theRenderer = GetComponent< Renderer >();
-
 			propertyBlock = new MaterialPropertyBlock();
 		}
 #endregion
