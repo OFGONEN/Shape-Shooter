@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   edge_spawn_duration: 0.35
   edge_spawn_ease: 12
-  edge_movement_speed: 1
   edge_reposition_duration: 0.1
   edge_reposition_ease: 12
   edge_merge_count: 2
