@@ -48,6 +48,7 @@ MonoBehaviour:
   levelFailedEvent: {fileID: 11400000, guid: ec850936269bc2e47b26cfebd8bdad97, type: 2}
   levelCompleted: {fileID: 11400000, guid: 28d976b368abc004a924d98b1751a17d, type: 2}
   notifier_progress: {fileID: 11400000, guid: 43438d720c16f2e4aa5a19d520e1e15f, type: 2}
+  notif_score_current: {fileID: 11400000, guid: 2de5244b543933e45a871decbf04a85a, type: 2}
 --- !u!114 &6253295288017648143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,6 +89,18 @@ MonoBehaviour:
         - m_Target: {fileID: 3087407567312676473}
           m_TargetAssemblyTypeName: FFStudio.LevelManager, Assembly-CSharp
           m_MethodName: LevelRevealedResponse
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: efef06bf257ee27438d6c2aab4936226, type: 2}
+          m_TargetAssemblyTypeName: FFStudio.GameEvent, Assembly-CSharp
+          m_MethodName: Raise
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

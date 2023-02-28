@@ -1,0 +1,310 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3097904721658705890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3097904721658705893}
+  - component: {fileID: 3097904721658705892}
+  m_Layer: 0
+  m_Name: shooter_square
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3097904721658705893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3097904721658705890}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2889111534164210459}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3097904721658705892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3097904721658705890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d0b65dcc8040db4c848b59459be5c45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shoot_behaviour_list:
+  - rid: 1591611869818781698
+  - rid: 1591611869818781699
+  - rid: 1591611869818781700
+  - rid: 1591611869818781701
+  - rid: 1591611869818781702
+  - rid: 1591611869818781703
+  - rid: 1591611869818781704
+  - rid: 1591611869818781705
+  - rid: 1591611869818781706
+  - rid: 1591611869818781707
+  - rid: 1591611869818781708
+  - rid: 1591611869818781709
+  - rid: 1591611869818781710
+  - rid: 1591611869818781711
+  - rid: 1591611869818781712
+  - rid: 1591611869818781713
+  - rid: 1591611869818781714
+  - rid: 1591611869818781715
+  - rid: 1591611869818781717
+  - rid: 1591611869818781722
+  - rid: 1591611869818781721
+  - rid: 1591611869818781720
+  - rid: 1591611869818781719
+  - rid: 1591611869818781718
+  - rid: 1591611869818781723
+  - rid: 1591611869818781724
+  - rid: 1591611869818781725
+  - rid: 1591611869818781726
+  - rid: 1591611869818781731
+  - rid: 1591611869818781730
+  - rid: 1591611869818781728
+  - rid: 1591611869818781729
+  - rid: 1591611869818781727
+  - rid: 1591611869818781732
+  - rid: 1591611869818781733
+  - rid: 1591611869818781734
+  - rid: 1591611869818781739
+  - rid: 1591611869818781738
+  - rid: 1591611869818781737
+  - rid: 1591611869818781736
+  - rid: 1591611869818781735
+  - rid: 1591611869818781862
+  - rid: 1591611869818781863
+  - rid: 1591611869818781742
+  - rid: 1591611869818781743
+  - rid: 1591611869818781747
+  - rid: 1591611869818781746
+  - rid: 1591611869818781745
+  - rid: 1591611869818781744
+  - rid: 1591611869818781748
+  - rid: 1591611869818781749
+  - rid: 1591611869818781750
+  - rid: 1591611869818781753
+  - rid: 1591611869818781755
+  - rid: 1591611869818781754
+  - rid: 1591611869818781752
+  - rid: 1591611869818781751
+  shoot_interval: 2
+  shoot_interval_last: 0
+  notif_level_progress: {fileID: 11400000, guid: 43438d720c16f2e4aa5a19d520e1e15f, type: 2}
+  shape_data: {fileID: 11400000, guid: d91f840875b2f4da3acd798023f0a8bc, type: 2}
+  list_edge_shooter: {fileID: 11400000, guid: 1399b839b41866644907e9afe9767ecf, type: 2}
+  library_edge_color: {fileID: 11400000, guid: d3c03ebdae667034b926785a757948e4, type: 2}
+  event_level_complete: {fileID: 11400000, guid: 28d976b368abc004a924d98b1751a17d, type: 2}
+  references:
+    version: 2
+    RefIds:
+    - rid: 1591611869818781698
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781699
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781700
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781701
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781702
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781703
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781704
+      type: {class: ShootSideBySideDoubleSameColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781705
+      type: {class: ShootSideBySideDoubleSameColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781706
+      type: {class: ShootSideBySideDoubleSameColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781707
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781708
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781709
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781710
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781711
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781712
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781713
+      type: {class: ShootSideBySideDoubleDifferentColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781714
+      type: {class: ShootSideBySideDoubleDifferentColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781715
+      type: {class: ShootSideBySideDoubleDifferentColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781717
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781718
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781719
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781720
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781721
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781722
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781723
+      type: {class: ShootSymmetricDouble, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781724
+      type: {class: ShootSymmetricDouble, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781725
+      type: {class: ShootSymmetricDouble, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781726
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781727
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781728
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781729
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781730
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781731
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781732
+      type: {class: ShootAllSameColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781733
+      type: {class: ShootAllSameColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781734
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781735
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781736
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781737
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781738
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781739
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781742
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781743
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781744
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781745
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781746
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781747
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781748
+      type: {class: SquareShootAllDifferentColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781749
+      type: {class: SquareShootAllDifferentColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781750
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781751
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781752
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781753
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781754
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781755
+      type: {class: ShootBasic, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781862
+      type: {class: ShootAllSymmetricColor, ns: , asm: Assembly-CSharp}
+    - rid: 1591611869818781863
+      type: {class: ShootAllSymmetricColor, ns: , asm: Assembly-CSharp}
+--- !u!1 &4987450750465661991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2889111534164210459}
+  - component: {fileID: 4777875133344240831}
+  m_Layer: 0
+  m_Name: logic_respond
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2889111534164210459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4987450750465661991}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3097904721658705893}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4777875133344240831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4987450750465661991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245dc21cc9428744fa28ad2d6ce7d327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventPairs:
+  - eventListener:
+      gameEvents:
+      - {fileID: 11400000, guid: efef06bf257ee27438d6c2aab4936226, type: 2}
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3097904721658705892}
+          m_TargetAssemblyTypeName: BoxShapeShooter, Assembly-CSharp
+          m_MethodName: OnLevelStart
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventListener:
+      gameEvents:
+      - {fileID: 11400000, guid: ec850936269bc2e47b26cfebd8bdad97, type: 2}
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3097904721658705892}
+          m_TargetAssemblyTypeName: BoxShapeShooter, Assembly-CSharp
+          m_MethodName: OnLevelFailed
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

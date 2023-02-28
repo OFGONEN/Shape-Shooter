@@ -55,7 +55,7 @@ namespace FFStudio
 			tween = tween.KillProper();
 		}
 
-		public void KillAndRewind()
+		public void RewindAndKill()
 		{
 			tween?.Rewind();
 			tween = tween.KillProper();

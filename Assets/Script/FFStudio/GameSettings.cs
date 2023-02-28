@@ -10,6 +10,20 @@ namespace FFStudio
     {
 #region Fields (Settings)
     // Info: You can use Title() attribute ONCE for every game-specific group of settings.
+    [ Title( "Edge" ) ]
+		[ LabelText( "Edge Spawn Duration" ) ] public float edge_spawn_duration;
+		[ LabelText( "Edge Spawn Ease" ) ] public Ease edge_spawn_ease;
+		[ LabelText( "Edge Movement Speed" ) ] public float edge_movement_speed;
+		[ LabelText( "Edge Reposition Duration" ) ] public float edge_reposition_duration;
+		[ LabelText( "Edge Reposition Ease" ) ] public Ease edge_reposition_ease;
+		[ LabelText( "Edge Merge Count" ) ] public int edge_merge_count = 2;
+		[ LabelText( "Edge Point Range" ) ] public Vector2Int edge_point_range;
+
+    [ Title( "Score" ) ]
+		[ LabelText( "Current Score Shake Position" ) ] public ShakePositionTween score_current_shakePosition;
+		[ LabelText( "Score Text Spawn Radius" ) ] public float score_text_spawn_radius;
+		[ LabelText( "Score Text Spawn Size" ) ] public float score_text_spawn_size;
+		[ LabelText( "Score Text Spawn Depth" ) ] public float score_text_spawn_depth;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
@@ -40,7 +54,7 @@ namespace FFStudio
     [ Title( "UI Particle" ) ]
 		[ LabelText( "Random Spawn Area in Screen Witdh Percentage" ) ] public float uiParticle_spawn_width_percentage = 10;
 		[ LabelText( "Spawn Movement Duration" ) ] public float uiParticle_spawn_duration = 0.1f;
-		[ LabelText( "Spanwn Movement Ease" ) ] public DG.Tweening.Ease uiParticle_spawn_ease = DG.Tweening.Ease.Linear;
+		[ LabelText( "Spawn Movement Ease" ) ] public DG.Tweening.Ease uiParticle_spawn_ease = DG.Tweening.Ease.Linear;
 		[ LabelText( "Target Travel Wait Time" ) ] public float uiParticle_target_waitDuration = 0.16f;
 		[ LabelText( "Target Travel Duration" ) ] public float uiParticle_target_duration = 0.4f;
 		[ LabelText( "Target Travel Duration (REWARD)" ) ] public float uiParticle_target_duration_reward = 0.85f;

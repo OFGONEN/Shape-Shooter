@@ -55,7 +55,7 @@ namespace FFStudio
             levelLoadedResponse.response   = InitialLevelLoad;
             levelFailResponse.response     = LevelFailResponse;
             levelCompleteResponse.response = LevelCompleteResponse;
-            tapInputListener.response      = ExtensionMethods.EmptyMethod;
+            tapInputListener.response      = Extensions.EmptyMethod;
 
 			level_information_text.text = "TAP TO START";
         }
@@ -88,10 +88,6 @@ namespace FFStudio
 					// .Append( tween ) // TODO: UIElements tween.
 					.Append( level_information_text_Scale.DoScale_Start( GameSettings.Instance.ui_Entity_Scale_TweenDuration ) )
 					.AppendCallback( () => tapInputListener.response = StartLevel );
-
-            // elephantLevelEvent.level             = CurrentLevelData.Instance.currentLevel_Shown;
-            // elephantLevelEvent.elephantEventType = ElephantEvent.LevelStarted;
-            // elephantLevelEvent.Raise();
         }
 
         private void LevelCompleteResponse()
@@ -138,7 +134,7 @@ namespace FFStudio
 
 			tutorialObjects.gameObject.SetActive( false );
 
-			tapInputListener.response = ExtensionMethods.EmptyMethod;
+			tapInputListener.response = Extensions.EmptyMethod;
 
 			elephantLevelEvent.level             = CurrentLevelData.Instance.currentLevel_Shown;
 			elephantLevelEvent.elephantEventType = ElephantEvent.LevelStarted;
@@ -147,7 +143,7 @@ namespace FFStudio
 
 		private void LoadNewLevel()
 		{
-			tapInputListener.response = ExtensionMethods.EmptyMethod;
+			tapInputListener.response = Extensions.EmptyMethod;
 
 			var sequence = DOTween.Sequence();
 
@@ -158,7 +154,7 @@ namespace FFStudio
 
 		private void Resetlevel()
 		{
-			tapInputListener.response = ExtensionMethods.EmptyMethod;
+			tapInputListener.response = Extensions.EmptyMethod;
 
 			var sequence = DOTween.Sequence();
 
