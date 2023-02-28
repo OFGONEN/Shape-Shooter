@@ -106,7 +106,7 @@ MonoBehaviour:
     shoot_id: 0
     shoot_chance: 3
     shoot_count: 2
-  shoot_interval: {x: 2, y: 3}
+  shoot_interval: {x: 1.5, y: 3}
   shape_data: {fileID: 11400000, guid: a9c7eecb22f1e7347801dca291236cd9, type: 2}
   list_edge_shooter: {fileID: 11400000, guid: 1399b839b41866644907e9afe9767ecf, type: 2}
   library_color: {fileID: 11400000, guid: d3c03ebdae667034b926785a757948e4, type: 2}
