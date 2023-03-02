@@ -747,8 +747,8 @@ MonoBehaviour:
   tutorialObjects: {fileID: 124199664260450679}
   image_tutorial: {fileID: 1488181277729002373}
   tutorial_image_array:
-  - {fileID: 21300000, guid: 7eec24458db0e6749ace180018e21c72, type: 3}
-  - {fileID: 21300000, guid: 7eec24458db0e6749ace180018e21c72, type: 3}
+  - {fileID: 21300000, guid: 13f33537a6d3e3f4b8e73d03b873c601, type: 3}
+  - {fileID: 21300000, guid: a561099a865cc3b4db71197c6c4802c5, type: 3}
   levelRevealedEvent: {fileID: 11400000, guid: be5502ede7f194b4cad32082aa9196eb, type: 2}
   loadNewLevelEvent: {fileID: 11400000, guid: f21048912f45f4f4ba5088a96779eb2f, type: 2}
   resetLevelEvent: {fileID: 11400000, guid: 0a3e52cd505ecfc4ba9ef153d4f3ba93, type: 2}
@@ -972,7 +972,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7eec24458db0e6749ace180018e21c72, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 97651c4dd9f28854586811dd1c8bd779, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
